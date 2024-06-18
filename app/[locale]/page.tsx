@@ -1,6 +1,13 @@
 import Image from "next/image";
+import {getI18n, getScopedI18n} from '@/locales/server';
+import {FunctionComponent} from "react";
+import {setStaticParamsLocale} from "next-international/server";
+import {PageProps} from "../next-types";
 
-export default function Home() {
+export default (async ({params}) => {
+  setStaticParamsLocale(params.locale);
+  const t = await getI18n();
+  t('hello');
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -110,4 +117,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
+}) satisfies FunctionComponent<PageProps>;
