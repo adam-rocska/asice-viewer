@@ -1,10 +1,12 @@
+import { paraglide } from "@inlang/paraglide-next/plugin"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/asice-viewer',
-  images: {
-    unoptimized: true,
-  },
 };
 
-export default nextConfig;
+export default paraglide({
+	paraglide: {
+		project: "./project.inlang",
+		outdir: "./paraglide"
+	},
+	...nextConfig
+});

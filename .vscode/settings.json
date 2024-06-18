@@ -1,0 +1,13 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    [ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" ],
+    [ "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" ],
+    [ "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" ]
+  ],
+  "files.associations": {
+    "*.tw.css": "tailwindcss",
+    "*.tw.module.css": "tailwindcss",
+  },
+  "sherlock.previewLanguageTag": "en",
+  "sherlock.inlineAnnotations.enabled": true
+}
