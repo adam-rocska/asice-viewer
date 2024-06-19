@@ -6,5 +6,10 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 export default (({params}) => {
   unstable_setRequestLocale(params.locale);
   const t = useTranslations('Index');
-  return <h1>{t('title')}</h1>;
+  return (
+    <>
+      <h1>{t('title')}</h1>
+      <button className="btn btn-secondary">Secondary</button>
+    </>
+  );
 }) satisfies FunctionComponent<PageProps>;

@@ -3,6 +3,7 @@ import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
 import {FunctionComponent} from 'react';
 import {LayoutProps} from '@/app/next-types';
 import locales from '@/lib/i18n/locales';
+import "./global.tw.css";
 
 export default (async ({children, params}) => {
   unstable_setRequestLocale(params.locale);
