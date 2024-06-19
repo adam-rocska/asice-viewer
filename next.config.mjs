@@ -2,7 +2,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import mdx from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 
-const withNextIntl = createNextIntlPlugin('./lib/i18n/index.ts');
+const withNextIntl = createNextIntlPlugin('./lib/i18n/getRequestConfig.ts');
 const withMDX = mdx({
   extension: /\.(mdx|md)$/,
   options: {
