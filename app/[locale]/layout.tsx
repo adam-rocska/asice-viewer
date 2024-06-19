@@ -4,6 +4,7 @@ import {FunctionComponent} from 'react';
 import {LayoutProps} from '@/app/next-types';
 import locales from '@/lib/i18n/locales';
 import "./global.tw.css";
+import {LocalizedStringProvider} from 'react-aria/i18n';
 
 export default (async ({children, params}) => {
   unstable_setRequestLocale(params.locale);
@@ -12,6 +13,7 @@ export default (async ({children, params}) => {
   return (
     <html lang={params.locale}>
       <body>
+        <LocalizedStringProvider locale={params.locale} />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

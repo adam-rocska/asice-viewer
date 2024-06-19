@@ -1,28 +1,82 @@
-import createNextIntlPlugin from 'next-intl/plugin';
-import mdx from '@next/mdx';
-import remarkGfm from 'remark-gfm';
+import createNextIntlPlugin from "next-intl/plugin";
+import mdx from "@next/mdx";
+import remarkGfm from "remark-gfm";
+import localesPlugin from "@react-aria/optimize-locales-plugin";
+import { readdirSync } from "fs";
 
-const withNextIntl = createNextIntlPlugin('./lib/i18n/getRequestConfig.ts');
+const withNextIntl = createNextIntlPlugin("./lib/i18n/getRequestConfig.ts");
 const withMDX = mdx({
   extension: /\.(mdx|md)$/,
   options: {
     remarkPlugins: [remarkGfm],
-  }
+  },
 });
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/asice-viewer',
-  pageExtensions: ['js', 'jsx', 'md','mdx', 'ts', 'tsx'],
+  output: "export",
+  basePath: "/asice-viewer",
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     unoptimized: true,
   },
-  transpilePackages: ['next-mdx-remote'],
+  reactStrictMode: true,
+  compiler: {
+    reactRemoveProperties: true,
+    styledComponents: true,
+  },
+  compress: true,
+  webpack(config, context) {
+    const svgFileLoaderRule = config.module.rules.find((rule) =>
+      rule.test?.test?.(".svg")
+    );
+    config.module.rules.push({
+      ...svgFileLoaderRule,
+      test: /\.svg$/i,
+      resourceQuery: /url/,
+    });
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: svgFileLoaderRule.issuer,
+      resourceQuery: { not: [...svgFileLoaderRule.resourceQuery.not, /url/] },
+      use: ["@svgr/webpack"],
+    });
+    svgFileLoaderRule.exclude = /\.svg$/i;
+
+    if (context.isServer)
+      config.plugins.push(
+        localesPlugin.webpack({ locales: resolveLocalesFrom("./messages/") })
+      );
+
+    return config;
+  },
+  experimental: {
+    optimizeServerReact: true,
+    turbo: {
+      rules: { "*.svg": { loaders: ["@svgr/webpack"], as: "*.js" } },
+    },
+  },
+  transpilePackages: ["next-mdx-remote"],
 };
 
-export default withMDX(
-  withNextIntl(
-    nextConfig
-  )
-);
+export default withMDX(withNextIntl(nextConfig));
+
+function resolveLocalesFrom(directory) {
+  return readdirSync(directory, {
+    encoding: "utf-8",
+    recursive: true,
+    withFileTypes: true,
+  })
+    .map((result) => {
+      if (!result.isFile) return;
+      if (!result.name.endsWith(".json")) return;
+      try {
+        const candidate = result.name.replace(".json", "");
+        new Intl.Locale(candidate);
+        return candidate;
+      } catch (e) {
+        return;
+      }
+    })
+    .filter(Boolean);
+}
