@@ -1,9 +1,9 @@
-import {Locale} from "@/lib/i18n/locales";
+import {KnownLocale} from "@/lib/i18n/locales";
 import {PropsWithChildren} from "react";
 
 export type PageProps = {
   params: {
-    locale: Locale;
+    locale: KnownLocale;
   }
 };
 export type LayoutProps = PropsWithChildren<PageProps>;

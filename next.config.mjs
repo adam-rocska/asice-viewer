@@ -15,11 +15,9 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/asice-viewer",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  images: {
-    unoptimized: true,
-  },
+  images: { unoptimized: true },
   reactStrictMode: true,
   compiler: {
     reactRemoveProperties: true,

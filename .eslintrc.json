@@ -2,6 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "semi": [ "error", "always" ],
+    "prefer-const": "error",
     "no-restricted-imports": [
       "error",
       {
