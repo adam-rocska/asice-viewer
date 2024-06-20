@@ -1,7 +1,8 @@
 {
   "actions": {
     "close": "Zatvoriť ponuku",
-    "open": "Otvoriť menu"
+    "open": "Otvoriť menu",
+    "starOnGithub": "Označiť hviezdičkou na GitHube"
   },
   "navigation": {
     "title": "ASiC-E Viewer",

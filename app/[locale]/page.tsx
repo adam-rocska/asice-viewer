@@ -7,7 +7,7 @@ export default (({params}) => {
   // unstable_setRequestLocale(params.locale);
   return (
     <>
-      Hello.
+
     </>
   );
 }) satisfies FunctionComponent<PageProps>;
