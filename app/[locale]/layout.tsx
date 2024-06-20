@@ -1,21 +1,22 @@
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
 import {FunctionComponent} from 'react';
 import {LayoutProps} from '@/app/next-types';
 import locales from '@/lib/i18n/locales';
 import "./global.tw.css";
-import Providers from './providers';
-import Navbar from '@/components/navbar';
+import {LocalizedStringProvider} from 'react-aria/i18n';
 
 export default (async ({children, params}) => {
   unstable_setRequestLocale(params.locale);
+  const messages = await getMessages();
 
   return (
     <html lang={params.locale}>
       <body>
-        <Providers locale={params.locale}>
-          <Navbar />
+        <LocalizedStringProvider locale={params.locale} />
+        <NextIntlClientProvider messages={messages}>
           {children}
-        </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

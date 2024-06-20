@@ -1,5 +1,5 @@
 import {FunctionComponent} from "react";
-import {KnownLocale} from "../i18n/locales";
+import {Locale} from "../i18n/locales";
 import {getLocale} from "next-intl/server";
 import {MDXRemote} from 'next-mdx-remote/rsc';
 import {readFile} from "fs/promises";
@@ -9,7 +9,7 @@ import {existsSync} from "fs";
 export type MDXLocalizedProps = {
   import: string,
   type?: 'md' | 'mdx',
-  locale?: KnownLocale
+  locale?: Locale
 };
 
 export const MDXLocalized: FunctionComponent<MDXLocalizedProps> = async (props) => {
