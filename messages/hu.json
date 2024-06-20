@@ -5,7 +5,7 @@
     "starOnGithub": "Csillagozd a GitHub-on"
   },
   "navigation": {
-    "title": "ASiC-E Viewer",
+    "title": "ASiC-E Olvasó",
     "menu": {
       "about": {
         "title": "Tudj meg többet",
@@ -18,7 +18,7 @@
           "title": "A formátumról"
         },
         "tool": {
-          "description": "Az ASiC-E Viewer működése dióhéjban.",
+          "description": "Az ASiC-E Olvasó működése dióhéjban.",
           "title": "Az eszközről"
         }
       },
@@ -39,5 +39,5 @@
       }
     }
   },
-  "tooltip": {}
+  "tooltip": { }
 }
