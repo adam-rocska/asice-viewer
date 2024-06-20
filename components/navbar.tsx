@@ -1,7 +1,15 @@
 "use client";
-import {FunctionComponent, PropsWithChildren, useState} from "react";
+import {FunctionComponent, PropsWithChildren, ReactNode, SVGProps, useState} from "react";
 import {useTranslations} from "next-intl";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import Info from "@/icons/info.svg";
+import Paper from "@/icons/paper.svg";
+import Profile from "@/icons/profile.svg";
+import Search from "@/icons/search.svg";
+import Show from "@/icons/show.svg";
+import Folder from "@/icons/folder.svg";
+import ChevronDown from "@/icons/chevron-down.svg";
+import {cn} from "tailwind-variants";
 
 export type Props = PropsWithChildren;
 
@@ -16,17 +24,20 @@ export default (p => {
         {
           title: t("navigation.menu.about.tool.title"),
           description: t("navigation.menu.about.tool.description"),
-          href: "/about/the-tool"
+          href: "/about/the-tool",
+          icon: Info
         },
         {
           title: t("navigation.menu.about.format.title"),
           description: t("navigation.menu.about.format.description"),
-          href: "/about/the-format"
+          href: "/about/the-format",
+          icon: Paper
         },
         {
           title: t("navigation.menu.about.creator.title"),
           description: t("navigation.menu.about.creator.description"),
-          href: "/about/the-creator"
+          href: "/about/the-creator",
+          icon: Profile
         }
       ]
     },
@@ -36,17 +47,20 @@ export default (p => {
         {
           title: t("navigation.menu.features.technicalView.title"),
           description: t("navigation.menu.features.technicalView.description"),
-          href: "/features/technical-view"
+          href: "/features/technical-view",
+          icon: Search
         },
         {
           title: t("navigation.menu.features.nonTechnicalView.title"),
           description: t("navigation.menu.features.nonTechnicalView.description"),
-          href: "/features/non-technical-view"
+          href: "/features/non-technical-view",
+          icon: Show
         },
         {
           title: t("navigation.menu.features.nestedDocuments.title"),
           description: t("navigation.menu.features.nestedDocuments.description"),
-          href: "/features/nested-documents"
+          href: "/features/nested-documents",
+          icon: Folder
         }
       ]
     }
@@ -64,33 +78,43 @@ export default (p => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden @sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
+      <NavbarContent className="hidden @sm:flex gap-4" justify="end">
+        {menuItems.map((item, index) => (
+          <Dropdown key={`${item}-${index}`}>
+            <NavbarItem>
+              <DropdownTrigger>
+                <Button
+                  disableRipple
+                  className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                  endContent={<ChevronDown width={16} height={16} />}
+                  radius="sm"
+                  variant="light"
+                >
+                  {item.title}
+                </Button>
+              </DropdownTrigger>
+            </NavbarItem>
+            <DropdownMenu
+              aria-label={item.title}
+              className="w-[340px]"
+              itemClasses={{
+                base: "gap-4",
+              }}
+            >
+              {item.items.map((subItem, subIndex) => (
+                <DropdownItem
+                  key={`${item}-${index}-${subIndex}-${subIndex}`}
+                  description={subItem.description}
+                  startContent={<subItem.icon width={32} height={32} />}
+                >
+                  {subItem.title}
+                </DropdownItem>
+              ))}
+            </DropdownMenu>
+          </Dropdown>
+        ))}
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -107,7 +131,7 @@ export default (p => {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
-    </Navbar>
+    </Navbar >
   );
 }) satisfies FunctionComponent<Props>;
 
@@ -117,5 +141,6 @@ type MenuItem = {
     title: string;
     description: string;
     href: string;
+    icon: FunctionComponent<SVGProps<SVGElement>>;
   }>
 }
