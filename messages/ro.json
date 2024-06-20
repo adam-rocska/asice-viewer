@@ -1,5 +1,41 @@
 {
-  "Index": {
-    "title": "Salut Lume!"
+  "actions": {
+    "close": "Închide meniul",
+    "open": "Deschide meniul"
+  },
+  "navigation": {
+    "title": "ASiC-E Viewer",
+    "menu": {
+      "about": {
+        "title": "Află mai multe",
+        "creator": {
+          "description": "Adam Laszlo Rocska, un antreprenor cu o experiență profundă în tehnologie.",
+          "title": "Despre creator"
+        },
+        "format": {
+          "description": "ASiC-E este un format pentru ambalarea documentelor electronice.",
+          "title": "Despre format"
+        },
+        "tool": {
+          "description": "Cum funcționează ASiC-E Viewer pe scurt.",
+          "title": "Despre instrument"
+        }
+      },
+      "features": {
+        "title": "Funcții",
+        "nestedDocuments": {
+          "description": "Este o practică obișnuită să imbricați documentele ASiC-E unul în celălalt.",
+          "title": "Documente imbricate"
+        },
+        "nonTechnicalView": {
+          "description": "Treceți la urmă și vizualizați documentele într-un format care poate fi citit de om.",
+          "title": "Vedere non-tehnică"
+        },
+        "technicalView": {
+          "description": "Vizualizați conținutul și detaliile tehnice ale documentului împreună cu metadatele acestuia.",
+          "title": "Vedere tehnică"
+        }
+      }
+    }
   }
 }

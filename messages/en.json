@@ -1,12 +1,9 @@
 {
-  "Index": {
-    "title": "Hello world!"
-  },
   "navigation": {
     "title": "ASiC-E Viewer",
     "menu": {
       "about": {
-        "title": "About",
+        "title": "Learn More",
         "tool": {
           "title": "About the tool",
           "description": "How ASiC-E Viewer works in a nutshell."
@@ -22,19 +19,23 @@
       },
       "features": {
         "title": "Features",
-        "sign": {
+        "technicalView": {
           "title": "Technical View",
           "description": "View the contents and technical details of the document along with its metadata."
         },
-        "verify": {
+        "nonTechnicalView": {
           "title": "Non-Technical View",
           "description": "Cut to the chase and view the documents in a human-readable format."
         },
-        "view": {
+        "nestedDocuments": {
           "title": "Nested Documents",
           "description": "It's common practice to nest ASiC-E documents within each other."
         }
       }
     }
+  },
+  "actions": {
+    "close": "Close menu",
+    "open": "Open menu"
   }
 }

@@ -1,5 +1,41 @@
 {
-  "Index": {
-    "title": "Ahoj svet!"
+  "actions": {
+    "close": "Zatvoriť ponuku",
+    "open": "Otvoriť menu"
+  },
+  "navigation": {
+    "title": "ASiC-E Viewer",
+    "menu": {
+      "about": {
+        "title": "Uč sa viac",
+        "creator": {
+          "description": "Adam Laszlo Rocska, podnikateľ s hlbokým zázemím v oblasti technológií.",
+          "title": "O tvorcovi"
+        },
+        "format": {
+          "description": "ASiC-E je formát na balenie elektronických dokumentov.",
+          "title": "O formáte"
+        },
+        "tool": {
+          "description": "Ako ASiC-E Viewer v skratke funguje.",
+          "title": "O nástroji"
+        }
+      },
+      "features": {
+        "title": "Funkcie",
+        "nestedDocuments": {
+          "description": "Je bežnou praxou vkladať dokumenty ASiC-E do seba.",
+          "title": "Vnorené dokumenty"
+        },
+        "nonTechnicalView": {
+          "description": "Postarajte sa o to a prezerajte si dokumenty vo formáte čitateľnom pre ľudí.",
+          "title": "Netechnický pohľad"
+        },
+        "technicalView": {
+          "description": "Zobrazte obsah a technické podrobnosti dokumentu spolu s jeho metadátami.",
+          "title": "Technický pohľad"
+        }
+      }
+    }
   }
 }

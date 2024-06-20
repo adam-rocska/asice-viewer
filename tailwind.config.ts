@@ -1,29 +1,18 @@
 import type {Config} from "tailwindcss";
-import daisyui from "daisyui";
-import typography from "@tailwindcss/typography";
-import containerQueries from "@tailwindcss/container-queries";
-import tailwindReactAriaComponents from "tailwindcss-react-aria-components";
+import {nextui} from "@nextui-org/react";
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
+  theme: {},
+  darkMode: "class",
   plugins: [
-    daisyui,
-    typography,
-    containerQueries,
-    tailwindReactAriaComponents
+    nextui(),
+    require('@tailwindcss/container-queries'),
   ],
 };
 export default config;

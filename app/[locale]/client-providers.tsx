@@ -1,9 +1,9 @@
 "use client";
 import locales, {KnownLocale} from "@/lib/i18n/locales";
 import {FunctionComponent, PropsWithChildren} from "react";
-import {I18nProvider} from "react-aria";
 import {useRouter} from '@/lib/i18n/navigation';
-import {RouterProvider} from 'react-aria-components';
+import {NextUIProvider} from '@nextui-org/react';
+import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 export type Props = PropsWithChildren<{
   locale: KnownLocale
@@ -18,23 +18,11 @@ export default (async p => {
 
   return (
     <>
-      <I18nProvider locale={p.locale}>
-        <RouterProvider
-          navigate={router.push}
-          useHref={useHref}
-        >
+      <NextUIProvider navigate={router.push} locale={p.locale}>
+        <NextThemesProvider attribute="class" defaultTheme="light">
           {p.children}
-        </RouterProvider>
-      </I18nProvider>
+        </NextThemesProvider>
+      </NextUIProvider>
     </>
   );
 }) satisfies FunctionComponent<Props>;
-
-
-declare module 'react-aria-components' {
-  interface RouterConfig {
-    routerOptions: NonNullable<
-      Parameters<ReturnType<typeof useRouter>['push']>[1]
-    >;
-  }
-}

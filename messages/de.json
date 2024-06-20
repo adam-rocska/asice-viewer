@@ -1,5 +1,41 @@
 {
-  "Index": {
-    "title": "Hallo Welt!"
+  "actions": {
+    "close": "Menü schließen",
+    "open": "Menü öffnen"
+  },
+  "navigation": {
+    "title": "ASiC-E-Viewer",
+    "menu": {
+      "about": {
+        "title": "Erfahren Sie mehr",
+        "creator": {
+          "description": "Adam Laszlo Rocska, ein Unternehmer mit umfassendem Technologiehintergrund.",
+          "title": "Über den Ersteller"
+        },
+        "format": {
+          "description": "ASiC-E ist ein Format zum Verpacken elektronischer Dokumente.",
+          "title": "Über das Format"
+        },
+        "tool": {
+          "description": "Die Funktionsweise von ASiC-E Viewer im Überblick.",
+          "title": "Über das Tool"
+        }
+      },
+      "features": {
+        "title": "Funktionen",
+        "nestedDocuments": {
+          "description": "Es ist üblich, ASiC-E-Dokumente ineinander zu verschachteln.",
+          "title": "Verschachtelte Dokumente"
+        },
+        "nonTechnicalView": {
+          "description": "Kommen Sie auf den Punkt und sehen Sie sich die Dokumente in einem für Menschen lesbaren Format an.",
+          "title": "Nichttechnische Sicht"
+        },
+        "technicalView": {
+          "description": "Zeigen Sie den Inhalt und die technischen Details des Dokuments zusammen mit seinen Metadaten an.",
+          "title": "Technische Sicht"
+        }
+      }
+    }
   }
 }

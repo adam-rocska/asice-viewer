@@ -1,5 +1,41 @@
 {
-  "Index": {
-    "title": "Helló Világ!"
+  "actions": {
+    "close": "Menü bezárása",
+    "open": "Menü megnyitása"
+  },
+  "navigation": {
+    "title": "ASiC-E Viewer",
+    "menu": {
+      "about": {
+        "title": "Tudj meg többet",
+        "creator": {
+          "description": "Rocska László Ádám, mély technológiai múlttal rendelkező vállalkozó.",
+          "title": "Az alkotóról"
+        },
+        "format": {
+          "description": "Az ASiC-E az elektronikus dokumentumok csomagolására szolgáló formátum.",
+          "title": "A formátumról"
+        },
+        "tool": {
+          "description": "Az ASiC-E Viewer működése dióhéjban.",
+          "title": "Az eszközről"
+        }
+      },
+      "features": {
+        "title": "Funkciók",
+        "nestedDocuments": {
+          "description": "Általános gyakorlat, hogy az ASiC-E dokumentumokat egymásba ágyazzák.",
+          "title": "Beágyazott dokumentumok"
+        },
+        "nonTechnicalView": {
+          "description": "Vágjon bele, és tekintse meg a dokumentumokat ember által olvasható formátumban.",
+          "title": "Nem műszaki nézet"
+        },
+        "technicalView": {
+          "description": "Tekintse meg a dokumentum tartalmát és műszaki részleteit a metaadatokkal együtt.",
+          "title": "Műszaki nézet"
+        }
+      }
+    }
   }
 }

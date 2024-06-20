@@ -1,5 +1,41 @@
 {
-  "Index": {
-    "title": "Pozdrav svijete!"
+  "actions": {
+    "close": "Zatvori izbornik",
+    "open": "Otvori izbornik"
+  },
+  "navigation": {
+    "title": "ASiC-E Viewer",
+    "menu": {
+      "about": {
+        "title": "Saznajte više",
+        "creator": {
+          "description": "Adam Laszlo Rocska, poduzetnik s dubokim iskustvom u tehnologiji.",
+          "title": "O kreatoru"
+        },
+        "format": {
+          "description": "ASiC-E je format za pakiranje elektroničkih dokumenata.",
+          "title": "O formatu"
+        },
+        "tool": {
+          "description": "Kako ASiC-E Viewer radi ukratko.",
+          "title": "O alatu"
+        }
+      },
+      "features": {
+        "title": "Funkcije",
+        "nestedDocuments": {
+          "description": "Uobičajena je praksa ugniježditi ASiC-E dokumente jedan u drugi.",
+          "title": "Ugniježđeni dokumenti"
+        },
+        "nonTechnicalView": {
+          "description": "Prijeđite na stvar i pregledajte dokumente u formatu čitljivom za čovjeka.",
+          "title": "Netehnički pogled"
+        },
+        "technicalView": {
+          "description": "Pregledajte sadržaj i tehničke detalje dokumenta zajedno s njegovim metapodacima.",
+          "title": "Tehnički pogled"
+        }
+      }
+    }
   }
 }

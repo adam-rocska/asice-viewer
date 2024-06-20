@@ -1,7 +1,6 @@
 import createNextIntlPlugin from "next-intl/plugin";
 import mdx from "@next/mdx";
 import remarkGfm from "remark-gfm";
-import localesPlugin from "@react-aria/optimize-locales-plugin";
 import { readdirSync } from "fs";
 
 const withNextIntl = createNextIntlPlugin("./lib/i18n/getRequestConfig.ts");
@@ -40,11 +39,6 @@ const nextConfig = {
       use: ["@svgr/webpack"],
     });
     svgFileLoaderRule.exclude = /\.svg$/i;
-
-    if (context.isServer)
-      config.plugins.push(
-        localesPlugin.webpack({ locales: resolveLocalesFrom("./messages/") })
-      );
 
     return config;
   },
