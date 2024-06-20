@@ -4,4 +4,4 @@ const locales = [
 ] as const;
 
 export default locales;
-export type Locale = typeof locales[number];
+export type KnownLocale = typeof locales[number];

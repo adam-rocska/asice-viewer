@@ -1,5 +1,8 @@
 import type {Config} from "tailwindcss";
 import daisyui from "daisyui";
+import typography from "@tailwindcss/typography";
+import containerQueries from "@tailwindcss/container-queries";
+import tailwindReactAriaComponents from "tailwindcss-react-aria-components";
 
 const config: Config = {
   content: [
@@ -17,7 +20,10 @@ const config: Config = {
     },
   },
   plugins: [
-    daisyui
+    daisyui,
+    typography,
+    containerQueries,
+    tailwindReactAriaComponents
   ],
 };
 export default config;
