@@ -1,7 +1,8 @@
 {
   "actions": {
     "close": "Menü bezárása",
-    "open": "Menü megnyitása"
+    "open": "Menü megnyitása",
+    "starOnGithub": "Csillagozd a GitHub-on"
   },
   "navigation": {
     "title": "ASiC-E Viewer",
@@ -37,5 +38,6 @@
         }
       }
     }
-  }
+  },
+  "tooltip": {}
 }

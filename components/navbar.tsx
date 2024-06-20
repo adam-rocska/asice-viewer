@@ -1,7 +1,7 @@
 "use client";
 import {FunctionComponent, PropsWithChildren, ReactNode, SVGProps, useState} from "react";
 import {useTranslations} from "next-intl";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Tooltip} from "@nextui-org/react";
 import Info from "@/icons/info.svg";
 import Paper from "@/icons/paper.svg";
 import Profile from "@/icons/profile.svg";
@@ -10,6 +10,7 @@ import Show from "@/icons/show.svg";
 import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
 import {cn} from "tailwind-variants";
+import GithubAnimated from "@/icons/github-animated";
 
 export type Props = PropsWithChildren;
 
@@ -78,7 +79,7 @@ export default (p => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden @sm:flex gap-4" justify="end">
+      <NavbarContent className="hidden @sm:flex gap-4" justify="center">
         {menuItems.map((item, index) => (
           <Dropdown key={`${item}-${index}`}>
             <NavbarItem>
@@ -131,6 +132,21 @@ export default (p => {
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
+
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden @lg:flex">
+          <Button
+            as={Link}
+            isExternal
+            href="https://github.com/adam-rocska/asice-viewer"
+            color="secondary"
+            variant="flat"
+          >
+            {t("actions.starOnGithub")}
+            <GithubAnimated width={24} height={24} />
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
     </Navbar >
   );
 }) satisfies FunctionComponent<Props>;

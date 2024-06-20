@@ -1,7 +1,8 @@
 {
   "actions": {
     "close": "Menü schließen",
-    "open": "Menü öffnen"
+    "open": "Menü öffnen",
+    "starOnGithub": "Auf GitHub mit einem Stern versehen"
   },
   "navigation": {
     "title": "ASiC-E-Viewer",
@@ -37,5 +38,6 @@
         }
       }
     }
-  }
+  },
+  "tooltip": {}
 }

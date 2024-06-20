@@ -36,6 +36,8 @@
   },
   "actions": {
     "close": "Close menu",
-    "open": "Open menu"
-  }
+    "open": "Open menu",
+    "starOnGithub": "Star on GitHub"
+  },
+  "tooltip": {}
 }

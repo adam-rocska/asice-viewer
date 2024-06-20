@@ -1,7 +1,8 @@
 {
   "actions": {
     "close": "Închide meniul",
-    "open": "Deschide meniul"
+    "open": "Deschide meniul",
+    "starOnGithub": "Acordă o stea pe GitHub"
   },
   "navigation": {
     "title": "ASiC-E Viewer",
@@ -37,5 +38,6 @@
         }
       }
     }
-  }
+  },
+  "tooltip": {}
 }

@@ -1,7 +1,8 @@
 {
   "actions": {
     "close": "Zatvori izbornik",
-    "open": "Otvori izbornik"
+    "open": "Otvori izbornik",
+    "starOnGithub": "Ocijeni zvjezdicom na GitHubu"
   },
   "navigation": {
     "title": "ASiC-E Viewer",
@@ -37,5 +38,6 @@
         }
       }
     }
-  }
+  },
+  "tooltip": {}
 }
