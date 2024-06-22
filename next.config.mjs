@@ -1,13 +1,14 @@
 import createNextIntlPlugin from "next-intl/plugin";
 import mdx from "@next/mdx";
 import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
 import { readdirSync } from "fs";
 
 const withNextIntl = createNextIntlPlugin("./lib/i18n/getRequestConfig.ts");
 const withMDX = mdx({
   extension: /\.(mdx|md)$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkToc],
   },
 });
 
