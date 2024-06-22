@@ -5,6 +5,7 @@ import {useLocale, useNow, useTranslations} from "next-intl";
 import {FunctionComponent} from "react";
 import Language from "@/icons/language.svg";
 import {usePathname, Link as LocalizedLink} from "@/lib/i18n/navigation";
+import clsx from "clsx";
 
 export default (() => {
   const t = useTranslations();
@@ -37,9 +38,16 @@ export default (() => {
   };
 
   return (
-    <footer className="bg-white dark:bg-gray-900">
-      <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+    <>
+      <footer className={clsx(
+        "bg-white dark:bg-gray-900",
+        "border-t-1 border-t-slate-200 dark:border-t-gray-800",
+        "border-b-1 border-b-slate-300 dark:border-b-gray-900",
+      )}>
+        <div className={clsx(
+          "mx-auto w-full max-w-screen-xl",
+          "grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4"
+        )}>
           {Object.entries(menuItems).map(([title, items], index) => (
             <div key={`${title}-${index}`}>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
@@ -65,7 +73,17 @@ export default (() => {
             </div>
           ))}
         </div>
-        <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+      </footer>
+      <footer className={clsx(
+        "bg-gradient-to-br",
+        "from-slate-50 to-slate-100",
+        "dark:from-gray-900 dark:to-gray-950",
+        "border-t-1 border-t-slate-200 dark:border-t-gray-800",
+      )}>
+        <div className={clsx(
+          "mx-auto w-full max-w-screen-xl",
+          "px-4 py-6 md:flex md:items-center md:justify-between"
+        )}>
           <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
             © {now.getFullYear()} <Link href="/" color="foreground" size="sm" underline="hover">{t('footer.copyright')}</Link>. {t('footer.rightsReserved')}
           </span>
@@ -101,8 +119,8 @@ export default (() => {
             </Dropdown>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer >
+    </>
   );
 }) satisfies FunctionComponent;
 
