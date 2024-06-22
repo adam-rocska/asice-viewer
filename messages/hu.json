@@ -65,5 +65,9 @@
       }
     }
   },
-  "tooltip": {}
+  "tooltip": { },
+  "footer": {
+    "rightsReserved": "Minden jog fenntartva.",
+    "copyright": "Rocska Ádám László ASiC-E Olvasója"
+  }
 }

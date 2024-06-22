@@ -65,5 +65,9 @@
     "open": "Open menu",
     "starOnGithub": "Star on GitHub"
   },
-  "tooltip": {}
+  "tooltip": { },
+  "footer": {
+    "rightsReserved": "All Rights Reserved.",
+    "copyright": "Adam Laszlo Rocska's ASiC-E Viewer"
+  }
 }

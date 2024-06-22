@@ -65,5 +65,9 @@
       }
     }
   },
-  "tooltip": {}
+  "tooltip": {},
+  "footer": {
+    "rightsReserved": "Sva prava pridržana.",
+    "copyright": "ASiC-E preglednik Adama Laszla Rocske"
+  }
 }

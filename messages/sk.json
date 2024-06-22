@@ -65,5 +65,9 @@
       }
     }
   },
-  "tooltip": {}
+  "tooltip": {},
+  "footer": {
+    "rightsReserved": "Všetky práva vyhradené.",
+    "copyright": "Prehliadač ASiC-E Adam Laszlo Rocska"
+  }
 }

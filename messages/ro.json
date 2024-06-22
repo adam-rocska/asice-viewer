@@ -65,5 +65,9 @@
       }
     }
   },
-  "tooltip": {}
+  "tooltip": {},
+  "footer": {
+    "rightsReserved": "Toate drepturile rezervate.",
+    "copyright": "Vizualizatorul ASiC-E al lui Adam Laszlo Rocska"
+  }
 }
