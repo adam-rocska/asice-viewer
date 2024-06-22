@@ -10,7 +10,7 @@ export default (async ({children, params}) => {
   unstable_setRequestLocale(params.locale);
 
   return (
-    <html lang={params.locale} className='light'>
+    <html lang={params.locale}>
       <body>
         <Providers locale={params.locale}>
           <Navbar />

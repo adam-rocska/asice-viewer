@@ -8,10 +8,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {},
   darkMode: "class",
+  theme: {
+    aspectRatio: {
+      'paper-A-vertical': `calc(1 / ${Math.sqrt(2)})`,
+      'paper-A-horizontal': `calc(${Math.sqrt(2)}/1)`,
+    }
+  },
   plugins: [
-    nextui(),
+    nextui({
+      addCommonColors: true,
+    }),
+    require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
   ],
 };

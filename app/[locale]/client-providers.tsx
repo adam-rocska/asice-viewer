@@ -18,8 +18,12 @@ export default (async p => {
 
   return (
     <>
-      <NextUIProvider navigate={router.push} locale={p.locale}>
-        <NextThemesProvider attribute="class" defaultTheme="light">
+      <NextUIProvider
+        navigate={router.push}
+        locale={p.locale}
+        className="flex flex-col min-h-screen"
+      >
+        <NextThemesProvider attribute="class">
           {p.children}
         </NextThemesProvider>
       </NextUIProvider>
