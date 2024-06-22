@@ -31,6 +31,17 @@
           "title": "Nested Documents",
           "description": "It's common practice to nest ASiC-E documents within each other."
         }
+      },
+      "feedback": {
+        "title": "Feedback",
+        "bugReport": {
+          "title": "Bug Report",
+          "description": "Report anything unexpected or out of order."
+        },
+        "featureRequest": {
+          "title": "Feature Request",
+          "description": "Request additional features in this free open-source tool."
+        }
       }
     }
   },

@@ -36,6 +36,17 @@
           "description": "Pregledajte sadržaj i tehničke detalje dokumenta zajedno s njegovim metapodacima.",
           "title": "Tehnički pogled"
         }
+      },
+      "feedback": {
+        "title": "Povratne informacije",
+        "bugReport": {
+          "description": "Prijavite sve neočekivano ili neispravno.",
+          "title": "Izvješće o pogrešci"
+        },
+        "featureRequest": {
+          "description": "Zatražite dodatne značajke u ovom besplatnom alatu otvorenog koda.",
+          "title": "Zahtjev za značajku"
+        }
       }
     }
   },

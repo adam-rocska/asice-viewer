@@ -1,22 +1,22 @@
 "use client";
-import {FunctionComponent, PropsWithChildren, ReactNode, SVGProps, useState} from "react";
-import {useTranslations} from "next-intl";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Tooltip} from "@nextui-org/react";
+import {FunctionComponent, SVGProps, useState} from "react";
+import {useTranslations, useLocale} from "next-intl";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
 import Info from "@/icons/info.svg";
 import Paper from "@/icons/paper.svg";
 import Profile from "@/icons/profile.svg";
 import Search from "@/icons/search.svg";
 import Show from "@/icons/show.svg";
+import Bug from "@/icons/bug.svg";
+import Wand from "@/icons/wand.svg";
 import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
-import {cn} from "tailwind-variants";
 import GithubAnimated from "@/icons/github-animated";
-
-export type Props = PropsWithChildren;
 
 export default (p => {
   const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
 
   const menuItems: MenuItem[] = [
     {
@@ -64,6 +64,23 @@ export default (p => {
           icon: Profile
         }
       ]
+    },
+    {
+      title: t("navigation.menu.feedback.title"),
+      items: [
+        {
+          title: t("navigation.menu.feedback.bugReport.title"),
+          description: t("navigation.menu.feedback.bugReport.description"),
+          href: `https://github.com/adam-rocska/asice-viewer/issues/new?template=bug_report.${locale}.md`,
+          icon: Bug
+        },
+        {
+          title: t("navigation.menu.feedback.featureRequest.title"),
+          description: t("navigation.menu.feedback.featureRequest.description"),
+          href: `https://github.com/adam-rocska/asice-viewer/issues/new?template=feature_request.${locale}.md`,
+          icon: Wand
+        }
+      ]
     }
   ];
 
@@ -107,6 +124,7 @@ export default (p => {
               {item.items.map((subItem, subIndex) => (
                 <DropdownItem
                   href={subItem.href}
+                  target={subItem.href.startsWith("http") ? "_blank" : undefined}
                   key={`${item}-${index}-${subIndex}-${subIndex}`}
                   description={subItem.description}
                   startContent={<subItem.icon width={32} height={32} />}
@@ -152,7 +170,7 @@ export default (p => {
       </NavbarContent>
     </Navbar >
   );
-}) satisfies FunctionComponent<Props>;
+}) satisfies FunctionComponent;
 
 type MenuItem = {
   title: string;

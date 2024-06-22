@@ -36,6 +36,17 @@
           "description": "Zeigen Sie den Inhalt und die technischen Details des Dokuments zusammen mit seinen Metadaten an.",
           "title": "Technische Sicht"
         }
+      },
+      "feedback": {
+        "title": "Rückmeldung",
+        "bugReport": {
+          "description": "Melden Sie alles Unerwartete oder Ungewöhnliche.",
+          "title": "Fehlerbericht"
+        },
+        "featureRequest": {
+          "description": "Fordern Sie zusätzliche Funktionen in diesem kostenlosen Open-Source-Tool an.",
+          "title": "Featureanfrage"
+        }
       }
     }
   },

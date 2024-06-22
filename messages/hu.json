@@ -36,8 +36,19 @@
           "description": "Tekintse meg a dokumentum tartalmát és műszaki részleteit a metaadatokkal együtt.",
           "title": "Műszaki nézet"
         }
+      },
+      "feedback": {
+        "title": "Visszajelzés",
+        "bugReport": {
+          "description": "Jelentse a váratlan vagy rendellenes dolgokat.",
+          "title": "Hibajelentés"
+        },
+        "featureRequest": {
+          "description": "Kérjen további funkciókat ebben az ingyenes nyílt forráskódú eszközben.",
+          "title": "Funkciókérés"
+        }
       }
     }
   },
-  "tooltip": { }
+  "tooltip": {}
 }

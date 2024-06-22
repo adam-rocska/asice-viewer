@@ -36,6 +36,17 @@
           "description": "Zobrazte obsah a technické podrobnosti dokumentu spolu s jeho metadátami.",
           "title": "Technický pohľad"
         }
+      },
+      "feedback": {
+        "title": "Spätná väzba",
+        "bugReport": {
+          "description": "Nahláste čokoľvek neočakávané alebo nefunkčné.",
+          "title": "Hlásenie o chybe"
+        },
+        "featureRequest": {
+          "description": "Požiadajte o ďalšie funkcie v tomto bezplatnom open source nástroji.",
+          "title": "Požiadavka funkcie"
+        }
       }
     }
   },

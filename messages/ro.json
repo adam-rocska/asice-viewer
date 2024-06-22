@@ -36,6 +36,17 @@
           "description": "Vizualizați conținutul și detaliile tehnice ale documentului împreună cu metadatele acestuia.",
           "title": "Vedere tehnică"
         }
+      },
+      "feedback": {
+        "title": "Părere",
+        "bugReport": {
+          "description": "Raportați orice lucru neașteptat sau neregulat.",
+          "title": "Raport de eroare"
+        },
+        "featureRequest": {
+          "description": "Solicitați funcții suplimentare în acest instrument gratuit cu sursă deschisă.",
+          "title": "Cerere de caracteristici"
+        }
       }
     }
   },
