@@ -47,6 +47,21 @@
           "description": "Požiadajte o ďalšie funkcie v tomto bezplatnom open source nástroji.",
           "title": "Požiadavka funkcie"
         }
+      },
+      "legal": {
+        "cookiePolicy": {
+          "title": "Zásady používania súborov cookie"
+        },
+        "privacyPolicy": {
+          "title": "Zásady ochrany osobných údajov"
+        },
+        "sourceCodeLicense": {
+          "title": "Licencia na zdrojový kód"
+        },
+        "termsOfUse": {
+          "title": "Podmienky používania"
+        },
+        "title": "Právne"
       }
     }
   },

@@ -47,6 +47,21 @@
           "description": "Kérjen további funkciókat ebben az ingyenes nyílt forráskódú eszközben.",
           "title": "Funkciókérés"
         }
+      },
+      "legal": {
+        "cookiePolicy": {
+          "title": "Cookie-szabályzat"
+        },
+        "privacyPolicy": {
+          "title": "Adatvédelmi irányelvek"
+        },
+        "sourceCodeLicense": {
+          "title": "Forráskód licenc"
+        },
+        "termsOfUse": {
+          "title": "Használati feltételek"
+        },
+        "title": "Jogi"
       }
     }
   },

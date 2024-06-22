@@ -47,6 +47,21 @@
           "description": "Zatražite dodatne značajke u ovom besplatnom alatu otvorenog koda.",
           "title": "Zahtjev za značajku"
         }
+      },
+      "legal": {
+        "cookiePolicy": {
+          "title": "Politika kolačića"
+        },
+        "privacyPolicy": {
+          "title": "Politika privatnosti"
+        },
+        "sourceCodeLicense": {
+          "title": "Licenca izvornog koda"
+        },
+        "termsOfUse": {
+          "title": "Uvjeti korištenja"
+        },
+        "title": "Pravno"
       }
     }
   },

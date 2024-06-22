@@ -47,6 +47,21 @@
           "description": "Fordern Sie zusätzliche Funktionen in diesem kostenlosen Open-Source-Tool an.",
           "title": "Featureanfrage"
         }
+      },
+      "legal": {
+        "cookiePolicy": {
+          "title": "Cookie-Richtlinie"
+        },
+        "privacyPolicy": {
+          "title": "Datenschutzrichtlinie"
+        },
+        "sourceCodeLicense": {
+          "title": "Quellcode-Lizenz"
+        },
+        "termsOfUse": {
+          "title": "Nutzungsbedingungen"
+        },
+        "title": "Legal"
       }
     }
   },

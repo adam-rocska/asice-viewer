@@ -47,6 +47,21 @@
           "description": "Solicitați funcții suplimentare în acest instrument gratuit cu sursă deschisă.",
           "title": "Cerere de caracteristici"
         }
+      },
+      "legal": {
+        "cookiePolicy": {
+          "title": "Politica de cookie-uri"
+        },
+        "privacyPolicy": {
+          "title": "Politica de confidențialitate"
+        },
+        "sourceCodeLicense": {
+          "title": "Licență pentru codul sursă"
+        },
+        "termsOfUse": {
+          "title": "Termeni de utilizare"
+        },
+        "title": "Legal"
       }
     }
   },

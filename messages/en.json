@@ -42,6 +42,21 @@
           "title": "Feature Request",
           "description": "Request additional features in this free open-source tool."
         }
+      },
+      "legal": {
+        "title": "Legal",
+        "cookiePolicy": {
+          "title": "Cookie Policy"
+        },
+        "privacyPolicy": {
+          "title": "Privacy Policy"
+        },
+        "sourceCodeLicense": {
+          "title": "Source Code License"
+        },
+        "termsOfUse": {
+          "title": "Terms of Use"
+        }
       }
     }
   },

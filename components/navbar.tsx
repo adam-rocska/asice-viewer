@@ -13,7 +13,7 @@ import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
 import GithubAnimated from "@/icons/github-animated";
 
-export default (p => {
+export default (() => {
   const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const locale = useLocale();
@@ -141,9 +141,6 @@ export default (p => {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
               className="w-full"
               href="#"
               size="lg"
