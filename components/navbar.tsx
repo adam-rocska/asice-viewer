@@ -75,7 +75,9 @@ export default (p => {
           className="@sm:hidden"
         />
         <NavbarBrand className="font-bold text-inherit">
-          {t('navigation.title')}
+          <Link href="/" color="foreground">
+            {t('navigation.title')}
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -104,6 +106,7 @@ export default (p => {
             >
               {item.items.map((subItem, subIndex) => (
                 <DropdownItem
+                  href={subItem.href}
                   key={`${item}-${index}-${subIndex}-${subIndex}`}
                   description={subItem.description}
                   startContent={<subItem.icon width={32} height={32} />}
