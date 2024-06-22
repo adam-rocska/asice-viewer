@@ -1,7 +1,6 @@
 import {FunctionComponent} from "react";
 
 export default (() => {
-  const t = useTranslations();
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
