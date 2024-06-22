@@ -45,7 +45,6 @@ const nextConfig = {
   },
   experimental: {
     optimizeServerReact: true,
-    serverComponentsExternalPackages: ['autoprefixer'],
     turbo: {
       rules: { "*.svg": { loaders: ["@svgr/webpack"], as: "*.js" } },
     },

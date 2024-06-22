@@ -5,6 +5,7 @@ import locales from '@/lib/i18n/locales';
 import "./global.tw.css";
 import Providers from './providers';
 import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 export default (async ({children, params}) => {
   unstable_setRequestLocale(params.locale);
@@ -15,6 +16,7 @@ export default (async ({children, params}) => {
         <Providers locale={params.locale}>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
