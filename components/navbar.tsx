@@ -20,29 +20,6 @@ export default (p => {
 
   const menuItems: MenuItem[] = [
     {
-      title: t("navigation.menu.about.title"),
-      items: [
-        {
-          title: t("navigation.menu.about.tool.title"),
-          description: t("navigation.menu.about.tool.description"),
-          href: "/about/the-tool",
-          icon: Info
-        },
-        {
-          title: t("navigation.menu.about.format.title"),
-          description: t("navigation.menu.about.format.description"),
-          href: "/about/the-format",
-          icon: Paper
-        },
-        {
-          title: t("navigation.menu.about.creator.title"),
-          description: t("navigation.menu.about.creator.description"),
-          href: "/about/the-creator",
-          icon: Profile
-        }
-      ]
-    },
-    {
       title: t("navigation.menu.features.title"),
       items: [
         {
@@ -62,6 +39,29 @@ export default (p => {
           description: t("navigation.menu.features.nestedDocuments.description"),
           href: "/features/nested-documents",
           icon: Folder
+        }
+      ]
+    },
+    {
+      title: t("navigation.menu.about.title"),
+      items: [
+        {
+          title: t("navigation.menu.about.tool.title"),
+          description: t("navigation.menu.about.tool.description"),
+          href: "/about/the-tool",
+          icon: Info
+        },
+        {
+          title: t("navigation.menu.about.format.title"),
+          description: t("navigation.menu.about.format.description"),
+          href: "/about/the-format",
+          icon: Paper
+        },
+        {
+          title: t("navigation.menu.about.creator.title"),
+          description: t("navigation.menu.about.creator.description"),
+          href: "/about/the-creator",
+          icon: Profile
         }
       ]
     }
