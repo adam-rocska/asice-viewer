@@ -69,5 +69,13 @@
   "footer": {
     "rightsReserved": "Minden jog fenntartva.",
     "copyright": "Rocska Ádám László ASiC-E Olvasója"
+  },
+  "features": {
+    "clientDatabase": {
+      "fileLoader": {
+        "supportedExtensions": "Támogatott fájlkiterjesztések: {fileExtensions}",
+        "dropzoneLabel": "Dobja ide a fájljait."
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
-import {FunctionComponent, PropsWithChildren} from "react";
-import {Button, Spacer} from "@nextui-org/react";
+import {FunctionComponent} from "react";
+import FileLoader from "@/features/client-database/file-loader";
 
 export type Props = {
   label: string;
@@ -10,9 +10,9 @@ export default (p => {
   return (
     <>
       <div className="flex flex-col gap-2 align-middle justify-center">
-        <Button color="primary" className="mx-auto">
+        <FileLoader color="primary" className="mx-auto">
           {p.label}
-        </Button>
+        </FileLoader>
         <small className='block text-foreground-400 italic text-center'>
           {p.alternative}
         </small>

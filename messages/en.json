@@ -69,5 +69,13 @@
   "footer": {
     "rightsReserved": "All Rights Reserved.",
     "copyright": "Adam Laszlo Rocska's ASiC-E Viewer"
+  },
+  "features": {
+    "clientDatabase": {
+      "fileLoader": {
+        "dropzoneLabel": "Drop your files here.",
+        "supportedExtensions": "Supported file extensions: {fileExtensions}"
+      }
+    }
   }
 }
