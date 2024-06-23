@@ -30,6 +30,7 @@ export default (p => {
       >
         {({getRootProps, getInputProps}) => (
           <>
+            <Button {...p} />
             {
               showDropzone.isEnabled && createPortal(
                 (
