@@ -1,20 +1,18 @@
 "use client";
-import useEventStateFlag from "@/lib/use-event-state";
 import {Button, ButtonProps} from "@nextui-org/react";
 import clsx from "clsx";
-import {FunctionComponent, useMemo, useRef} from "react";
+import {FunctionComponent, useRef} from "react";
 import Dropzone from "react-dropzone";
 import PaperPlus from "@/icons/paper-plus.svg";
 import {useTranslations} from "next-intl";
 import {createPortal} from "react-dom";
-import {useDebounceValue, useEventListener, useIsClient} from "usehooks-ts";
+import {useEventListener} from "usehooks-ts";
 import useBooleanState from "@/lib/use-boolean-state";
 
 export default (p => {
   const body = useRef(global?.document?.body);
   const showDropzone = useBooleanState(false);
   useEventListener('dragenter', showDropzone.set, body);
-
   const t = useTranslations();
 
   return (
@@ -32,7 +30,6 @@ export default (p => {
       >
         {({getRootProps, getInputProps}) => (
           <>
-            <Button {...p} />
             {
               showDropzone.isEnabled && createPortal(
                 (
@@ -42,9 +39,9 @@ export default (p => {
                     'flex items-center justify-center',
                   )}>
                     <label className={clsx(
-                      "bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600",
+                      "bg-slate-50 dark:bg-slate-950 border",
                       "flex flex-col items-center justify-center min-h-64 p-6",
-                      "border-2 border-slate-300 border-dashed rounded-3xl dark:border-slate-700",
+                      "border-2 border-dashed rounded-lg border-slate-400 dark:border-slate-700",
                       "cursor-pointer",
                       "landscape:aspect-paper-A-horizontal portrait:aspect-paper-A-vertical"
                     )}
