@@ -12,7 +12,7 @@ export default (async ({children, params}) => {
 
   return (
     <html lang={params.locale}>
-      <body>
+      <body className="bg-slate-50/70 dark:bg-slate-950/70">
         <Providers locale={params.locale}>
           <Navbar />
           {children}

@@ -85,7 +85,9 @@ export default (() => {
   ];
 
   return (
-    <Navbar isBordered onMenuOpenChange={setIsMenuOpen} className="@container">
+    <Navbar isBordered onMenuOpenChange={setIsMenuOpen} className="@container" classNames={{
+      base: "bg-slate-50/70 dark:bg-slate-950/70"
+    }}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? t('actions.close') : t('actions.open')}
