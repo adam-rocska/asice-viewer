@@ -1,5 +1,5 @@
 import {FunctionComponent} from "react";
-import FileLoader from "@/features/client-database/file-loader";
+import FileLoader from "@/features/file-loader";
 
 export type Props = {
   label: string;

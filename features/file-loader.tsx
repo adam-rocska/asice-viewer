@@ -8,19 +8,21 @@ import {useTranslations} from "next-intl";
 import {createPortal} from "react-dom";
 import {useEventListener} from "usehooks-ts";
 import useBooleanState from "@/lib/use-boolean-state";
+import useFileStorage from "./use-file-storage";
 
 export default (p => {
   const body = useRef(global?.document?.body);
   const showDropzone = useBooleanState(false);
   useEventListener('dragenter', showDropzone.set, body);
+  const fileStorage = useFileStorage();
   const t = useTranslations();
+
   const dropzoneProps: DropzoneOptions = {
     onDragEnter: showDropzone.set,
-    onDrop: acceptedFiles => {
-      console.log(acceptedFiles);
+    onDrop: async acceptedFiles => {
+      await fileStorage.putFile(...acceptedFiles);
       showDropzone.unset();
     },
-    /// TODO: double check: https://www.id.ee/en/article/bdoc2-1-new-estonian-digital-signature-standard-format/
     accept: {'application/vnd.etsi.asic-e+zip': ['.asice', '.sce', '.bdoc']}
   };
 
