@@ -5,7 +5,6 @@ import {FunctionComponent, useRef} from "react";
 import Dropzone, {DropzoneOptions} from "react-dropzone";
 import PaperPlus from "@/icons/paper-plus.svg";
 import {useTranslations} from "next-intl";
-import {createPortal} from "react-dom";
 import {useEventListener} from "usehooks-ts";
 import useBooleanState from "@/lib/use-boolean-state";
 import useFileStorage from "./use-file-storage";
@@ -37,7 +36,7 @@ export default (p => {
         )}
       </Dropzone>
       <Dropzone {...dropzoneProps}>
-        {({getRootProps, getInputProps, open}) => (
+        {({getRootProps, getInputProps}) => (
           <Modal
             isOpen={showDropzone.isEnabled}
             onClose={showDropzone.unset}
