@@ -12,10 +12,11 @@ import Wand from "@/icons/wand.svg";
 import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
 import GithubAnimated from "@/icons/github-animated";
-import Link from "@/components/Link";
+import Link, {useLinkPropsFactory} from "@/components/link";
 
 export default (() => {
   const t = useTranslations();
+  const linkProps = useLinkPropsFactory();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const locale = useLocale();
 
@@ -126,7 +127,7 @@ export default (() => {
             >
               {item.items.map((subItem, subIndex) => (
                 <DropdownItem
-                  href={subItem.href}
+                  {...linkProps({href: subItem.href})}
                   target={subItem.href.startsWith("http") ? "_blank" : undefined}
                   key={`${item}-${index}-${subIndex}-${subIndex}`}
                   description={subItem.description}

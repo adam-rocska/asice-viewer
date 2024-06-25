@@ -6,11 +6,12 @@ import {FunctionComponent} from "react";
 import Language from "@/icons/language.svg";
 import {usePathname} from "@/lib/i18n/navigation";
 import clsx from "clsx";
-import Link from "@/components/Link";
+import Link, {useLinkPropsFactory} from "@/components/link";
 
 export default (() => {
   const t = useTranslations();
   const locale = useLocale();
+  const linkProps = useLinkPropsFactory();
   const now = useNow();
   const displayNames = new Intl.DisplayNames([locale], {type: "language"});
   const pathName = usePathname();
@@ -106,9 +107,14 @@ export default (() => {
                       return aLocalized.localeCompare(bLocalized);
                     })
                     .map((locale) => (
-                      <DropdownItem key={locale}>
-                        <Link href={pathName} hrefLang={locale} color="foreground">
-                          {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small></Link>
+                      <DropdownItem
+                        key={locale}
+                        {...linkProps({
+                          href: pathName,
+                          hrefLang: locale,
+                        })}
+                      >
+                        {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small>
                       </DropdownItem>
                     ))
                 }

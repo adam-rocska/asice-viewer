@@ -3,7 +3,7 @@ import {FunctionComponent, useEffect, useState} from "react";
 import FileLoader from "@/features/file-loader";
 import useFileStorage from "@/features/use-file-storage";
 import {Button, Skeleton} from "@nextui-org/react";
-import Link from "@/components/Link";
+import Link from "@/components/link";
 
 export type Props = {
   uploadLabel: string,
