@@ -1,11 +1,12 @@
 "use client";
 import locales, {KnownLocale} from "@/lib/i18n/locales";
-import {Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Link} from "@nextui-org/react";
+import {Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/react";
 import {useLocale, useNow, useTranslations} from "next-intl";
 import {FunctionComponent} from "react";
 import Language from "@/icons/language.svg";
-import {usePathname, Link as LocalizedLink} from "@/lib/i18n/navigation";
+import {usePathname} from "@/lib/i18n/navigation";
 import clsx from "clsx";
+import Link from "@/components/Link";
 
 export default (() => {
   const t = useTranslations();
@@ -106,12 +107,8 @@ export default (() => {
                     })
                     .map((locale) => (
                       <DropdownItem key={locale}>
-                        <LocalizedLink
-                          href={pathName}
-                          locale={locale}
-                        >
-                          {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small>
-                        </LocalizedLink>
+                        <Link href={pathName} hrefLang={locale} color="foreground">
+                          {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small></Link>
                       </DropdownItem>
                     ))
                 }

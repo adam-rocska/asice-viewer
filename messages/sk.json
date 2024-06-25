@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Všetky práva vyhradené.",
     "copyright": "Prehliadač ASiC-E Adam Laszlo Rocska"
@@ -76,6 +76,15 @@
         "supportedExtensions": "Podporované prípony súborov: {fileExtensions}",
         "dropzoneLabel": "Sem presuňte svoje súbory."
       }
+    },
+    "fileTable": {
+      "columnLabel": {
+        "fileName": "Názov súboru",
+        "fileSize": "Veľkosť súboru",
+        "lastModified": "Naposledy zmenené"
+      },
+      "loading": "Načítavajú sa súbory z vášho prehliadača...",
+      "noFilesToDisplay": "Žiadne súbory na zobrazenie."
     }
   }
 }

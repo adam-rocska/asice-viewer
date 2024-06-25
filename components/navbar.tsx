@@ -1,7 +1,7 @@
 "use client";
 import {FunctionComponent, SVGProps, useState} from "react";
 import {useTranslations, useLocale} from "next-intl";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
 import Info from "@/icons/info.svg";
 import Paper from "@/icons/paper.svg";
 import Profile from "@/icons/profile.svg";
@@ -12,6 +12,7 @@ import Wand from "@/icons/wand.svg";
 import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
 import GithubAnimated from "@/icons/github-animated";
+import Link from "@/components/Link";
 
 export default (() => {
   const t = useTranslations();

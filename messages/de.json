@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Alle Rechte vorbehalten.",
     "copyright": "Adam Laszlo Rocskas ASiC-E Viewer"
@@ -76,6 +76,15 @@
         "supportedExtensions": "Unterstützte Dateierweiterungen: {fileExtensions}",
         "dropzoneLabel": "Legen Sie Ihre Dateien hier ab."
       }
+    },
+    "fileTable": {
+      "columnLabel": {
+        "fileName": "Dateiname",
+        "fileSize": "Dateigröße",
+        "lastModified": "Zuletzt bearbeitet"
+      },
+      "loading": "Dateien werden von Ihrem Browser geladen...",
+      "noFilesToDisplay": "Keine Dateien zum Anzeigen vorhanden."
     }
   }
 }

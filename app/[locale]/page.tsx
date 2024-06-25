@@ -4,7 +4,6 @@ import Content from "./_contents";
 import {unstable_setRequestLocale} from 'next-intl/server';
 import CallToAction from "./_contents/call-to-action";
 import clsx from 'clsx';
-import {Input} from '@nextui-org/react';
 
 export default (({params}) => {
   unstable_setRequestLocale(params.locale);

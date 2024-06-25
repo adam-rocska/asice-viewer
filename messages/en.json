@@ -65,7 +65,7 @@
     "open": "Open menu",
     "starOnGithub": "Star on GitHub"
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "All Rights Reserved.",
     "copyright": "Adam Laszlo Rocska's ASiC-E Viewer"
@@ -76,6 +76,15 @@
         "dropzoneLabel": "Drop your files here.",
         "supportedExtensions": "Supported file extensions: {fileExtensions}"
       }
+    },
+    "fileTable": {
+      "columnLabel": {
+        "fileName": "File Name",
+        "lastModified": "Last Modified",
+        "fileSize": "File Size"
+      },
+      "loading": "Loading files from your browser...",
+      "noFilesToDisplay": "No files to display."
     }
   }
 }

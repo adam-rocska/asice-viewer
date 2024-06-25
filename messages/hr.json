@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Sva prava pridržana.",
     "copyright": "ASiC-E preglednik Adama Laszla Rocske"
@@ -76,6 +76,15 @@
         "supportedExtensions": "Podržani nastavci datoteka: {fileExtensions}",
         "dropzoneLabel": "Ispustite svoje datoteke ovdje."
       }
+    },
+    "fileTable": {
+      "columnLabel": {
+        "fileName": "Naziv datoteke",
+        "fileSize": "Veličina datoteke",
+        "lastModified": "Zadnja promjena"
+      },
+      "loading": "Učitavanje datoteka iz vašeg preglednika...",
+      "noFilesToDisplay": "Nema datoteka za prikaz."
     }
   }
 }

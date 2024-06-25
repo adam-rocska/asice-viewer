@@ -19,7 +19,8 @@ export default (async p => {
   return (
     <>
       <NextUIProvider
-        navigate={router.push}
+        skipFramerMotionAnimations={false}
+        // navigate={router.push}
         locale={p.locale}
         className="flex flex-col min-h-screen"
       >

@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Toate drepturile rezervate.",
     "copyright": "Vizualizatorul ASiC-E al lui Adam Laszlo Rocska"
@@ -76,6 +76,15 @@
         "supportedExtensions": "Extensii de fișiere acceptate: {fileExtensions}",
         "dropzoneLabel": "Aruncă fișierele aici."
       }
+    },
+    "fileTable": {
+      "columnLabel": {
+        "fileName": "Nume de fișier",
+        "fileSize": "Mărime fișier",
+        "lastModified": "Modificat ultima dată"
+      },
+      "loading": "Se încarcă fișiere din browser...",
+      "noFilesToDisplay": "Nu există fișiere de afișat."
     }
   }
 }
