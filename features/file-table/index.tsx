@@ -1,10 +1,13 @@
 "use client";
-import {FunctionComponent, useCallback} from 'react';
-import {Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow} from '@nextui-org/react';
+import {FunctionComponent, useCallback, useMemo, useState} from 'react';
+import {Spacer, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow} from '@nextui-org/react';
 import useFileList from './use-file-list';
 import {useFormatter, useTranslations} from 'next-intl';
 import byteFormatter from '@/lib/byte-formatter';
 import {useIsClient} from 'usehooks-ts';
+import clsx from 'clsx';
+import FileLoader from '../file-loader';
+import PaperPlus from "@/icons/paper-plus.svg";
 
 type Props = {
   className?: TableProps["className"];
@@ -15,6 +18,7 @@ export default (p => {
   const fileList = useFileList();
   const formatter = useFormatter();
   const t = useTranslations();
+  const [selectedKeys, setSelectedKeys] = useState(new Set([]));
   const renderCell = useCallback(
     (file: File, key: keyof File) => {
       switch (key) {
@@ -27,26 +31,38 @@ export default (p => {
     [formatter]
   );
 
-  const columns: Column[] = [
-    {key: "name", label: t('features.fileTable.columnLabel.fileName')},
-    {key: "lastModified", label: t('features.fileTable.columnLabel.lastModified')},
-    {key: "size", label: t('features.fileTable.columnLabel.fileSize')},
-  ];
+  const controls = useMemo(() => {
+    return (
+      <div className="flex flex-col gap-4">
+        <div className="flex justify-between gap-3 items-end">
+          <Spacer />
+          <FileLoader color="primary" endContent={<PaperPlus />}>
+            {t('features.fileTable.controls.openNewFile')}
+          </FileLoader>
+        </div>
+      </div>
+    );
+  }, [t]);
 
   return (
     <Table
       aria-label={"Files loaded in this browser"}
+      isHeaderSticky
+      selectedKeys={selectedKeys}
+      selectionMode="multiple"
+
+      topContent={controls}
+      topContentPlacement="outside"
+
       sortDescriptor={fileList.sortDescriptor}
       onSortChange={fileList.sort}
-      className={p.className}
+      className={clsx(p.className, "max-h-96")}
       isStriped
     >
-      <TableHeader columns={columns}>
-        {({key, label}) => (
-          <TableColumn key={key} allowsSorting>
-            {label}
-          </TableColumn>
-        )}
+      <TableHeader>
+        <TableColumn allowsSorting key="name"> {t('features.fileTable.columnLabel.fileName')}</TableColumn>
+        <TableColumn allowsSorting key="lastModified"> {t('features.fileTable.columnLabel.lastModified')}</TableColumn>
+        <TableColumn allowsSorting key="size"> {t('features.fileTable.columnLabel.fileSize')}</TableColumn>
       </TableHeader>
       <TableBody
         items={fileList.items}
@@ -67,5 +83,3 @@ export default (p => {
     </Table>
   );
 }) satisfies FunctionComponent<Props>;
-
-type Column = {key: keyof File, label: string, };

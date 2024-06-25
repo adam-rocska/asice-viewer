@@ -65,7 +65,7 @@
     "open": "Open menu",
     "starOnGithub": "Star on GitHub"
   },
-  "tooltip": {},
+  "tooltip": { },
   "footer": {
     "rightsReserved": "All Rights Reserved.",
     "copyright": "Adam Laszlo Rocska's ASiC-E Viewer"
@@ -84,7 +84,10 @@
         "fileSize": "File Size"
       },
       "loading": "Loading files from your browser...",
-      "noFilesToDisplay": "No files to display."
+      "noFilesToDisplay": "No files to display.",
+      "controls": {
+        "openNewFile": "Open Another ASiC-E File"
+      }
     }
   }
 }

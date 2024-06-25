@@ -84,7 +84,10 @@
         "lastModified": "Naposledy zmenené"
       },
       "loading": "Načítavajú sa súbory z vášho prehliadača...",
-      "noFilesToDisplay": "Žiadne súbory na zobrazenie."
+      "noFilesToDisplay": "Žiadne súbory na zobrazenie.",
+      "controls": {
+        "openNewFile": "Otvorte ďalší súbor ASiC-E"
+      }
     }
   }
 }

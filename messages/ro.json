@@ -84,7 +84,10 @@
         "lastModified": "Modificat ultima dată"
       },
       "loading": "Se încarcă fișiere din browser...",
-      "noFilesToDisplay": "Nu există fișiere de afișat."
+      "noFilesToDisplay": "Nu există fișiere de afișat.",
+      "controls": {
+        "openNewFile": "Deschideți un alt fișier ASiC-E"
+      }
     }
   }
 }

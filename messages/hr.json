@@ -84,7 +84,10 @@
         "lastModified": "Zadnja promjena"
       },
       "loading": "Učitavanje datoteka iz vašeg preglednika...",
-      "noFilesToDisplay": "Nema datoteka za prikaz."
+      "noFilesToDisplay": "Nema datoteka za prikaz.",
+      "controls": {
+        "openNewFile": "Otvorite drugu ASiC-E datoteku"
+      }
     }
   }
 }
