@@ -81,7 +81,8 @@
       "columnLabel": {
         "fileName": "Nume de fișier",
         "fileSize": "Mărime fișier",
-        "lastModified": "Modificat ultima dată"
+        "lastModified": "Modificat ultima dată",
+        "actions": "Acțiuni"
       },
       "loading": "Se încarcă fișiere din browser...",
       "noFilesToDisplay": "Nu există fișiere de afișat.",

@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Alle Rechte vorbehalten.",
     "copyright": "Adam Laszlo Rocskas ASiC-E Viewer"
@@ -81,12 +81,17 @@
       "columnLabel": {
         "fileName": "Dateiname",
         "fileSize": "Dateigröße",
-        "lastModified": "Zuletzt bearbeitet"
+        "lastModified": "Zuletzt bearbeitet",
+        "actions": "Aktionen"
       },
       "loading": "Dateien werden von Ihrem Browser geladen...",
       "noFilesToDisplay": "Keine Dateien zum Anzeigen vorhanden.",
       "controls": {
-        "openNewFile": "Öffnen Sie eine andere ASiC-E-Datei"
+        "openNewFile": "Öffnen Sie eine andere ASiC-E-Datei",
+        "deleteFile": {
+          "explanation": "Dadurch wird diese Datei dauerhaft aus Ihrem Browser entfernt.",
+          "label": "Datei löschen"
+        }
       }
     }
   }

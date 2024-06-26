@@ -81,12 +81,17 @@
       "columnLabel": {
         "fileName": "File Name",
         "lastModified": "Last Modified",
-        "fileSize": "File Size"
+        "fileSize": "File Size",
+        "actions": "Actions"
       },
       "loading": "Loading files from your browser...",
       "noFilesToDisplay": "No files to display.",
       "controls": {
-        "openNewFile": "Open Another ASiC-E File"
+        "openNewFile": "Open Another ASiC-E File",
+        "deleteFile": {
+          "label": "Delete File",
+          "explanation": "It will permanently remove this file from your browser."
+        }
       }
     }
   }

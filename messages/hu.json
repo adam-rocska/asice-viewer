@@ -65,7 +65,7 @@
       }
     }
   },
-  "tooltip": { },
+  "tooltip": {},
   "footer": {
     "rightsReserved": "Minden jog fenntartva.",
     "copyright": "Rocska Ádám László ASiC-E Olvasója"
@@ -81,12 +81,17 @@
       "columnLabel": {
         "fileName": "Fájl név",
         "fileSize": "Fájl méret",
-        "lastModified": "Utoljára módosítva"
+        "lastModified": "Utoljára módosítva",
+        "actions": "Műveletek"
       },
       "loading": "Fájlok betöltése a böngészőből...",
       "noFilesToDisplay": "Nincs megjeleníthető fájl.",
       "controls": {
-        "openNewFile": "Másik ASiC-E fájl megnyitása"
+        "openNewFile": "Másik ASiC-E fájl megnyitása",
+        "deleteFile": {
+          "explanation": "Ez véglegesen eltávolítja ezt a fájlt a böngészőből.",
+          "label": "Fájl törlése"
+        }
       }
     }
   }

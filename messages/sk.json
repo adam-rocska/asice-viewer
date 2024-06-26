@@ -81,12 +81,17 @@
       "columnLabel": {
         "fileName": "Názov súboru",
         "fileSize": "Veľkosť súboru",
-        "lastModified": "Naposledy zmenené"
+        "lastModified": "Naposledy zmenené",
+        "actions": "Akcie"
       },
       "loading": "Načítavajú sa súbory z vášho prehliadača...",
       "noFilesToDisplay": "Žiadne súbory na zobrazenie.",
       "controls": {
-        "openNewFile": "Otvorte ďalší súbor ASiC-E"
+        "openNewFile": "Otvorte ďalší súbor ASiC-E",
+        "deleteFile": {
+          "explanation": "Tento súbor sa natrvalo odstráni z vášho prehliadača.",
+          "label": "Vymazať súbor"
+        }
       }
     }
   }
