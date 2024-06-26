@@ -13,9 +13,6 @@ export default (({params}) => {
         'pt-8 pb-16 px-4',
         'prose dark:prose-invert',
       )}>
-        <h1>
-          Files
-        </h1>
         <TableView className="not-prose" />
       </main>
     </>

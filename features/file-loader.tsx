@@ -45,8 +45,7 @@ export default (p => {
             <ModalContent>
               <ModalBody {...getRootProps({
                 className: clsx(
-                  "flex flex-col items-center justify-center pt-5 pb-6",
-                  "text-slate-400 dark:text-slate-500 ",
+                  "flex flex-col items-center justify-center pt-5 pb-6"
                 )
               })}>
                 <PaperPlus width={64} height={64} />

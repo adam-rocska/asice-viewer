@@ -93,6 +93,11 @@
           "label": "Vymazať súbor"
         }
       }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "názov"
+      }
     }
   }
 }

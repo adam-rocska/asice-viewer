@@ -10,16 +10,14 @@ export default (({params}) => {
   return (
     <main className={clsx(
       'bg-gradient-to-tl',
-      'from-slate-50 to-slate-100 border-slate-200',
-      'dark:from-slate-900 dark:to-slate-950 dark:border-slate-800',
+      'from-background to-content1 border-divider',
     )}>
       <section className={clsx(
         'prose dark:prose-invert',
         'mx-auto',
-        'border-1',
+        'border-1 rounded-lg',
         'bg-gradient-to-br',
-        'from-slate-50 to-slate-100 border-slate-200',
-        'dark:from-slate-900 dark:to-slate-950 dark:border-slate-800',
+        'from-content1 to-background border-divider',
         'px-[6cqw] py-[6cqh]',
         'mt-12 mb-24'
       )}>

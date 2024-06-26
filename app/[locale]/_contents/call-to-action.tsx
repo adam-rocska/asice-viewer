@@ -32,7 +32,7 @@ export default (p => {
                 as={Link}
                 href="/files"
                 color="primary"
-                variant="bordered"
+                variant="flat"
                 className="mx-auto"
               >
                 {p.launchLabel}

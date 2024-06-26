@@ -93,6 +93,11 @@
           "label": "Izbrisati dateoteku"
         }
       }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "Ime"
+      }
     }
   }
 }

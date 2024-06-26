@@ -42,85 +42,80 @@ export default (() => {
   return (
     <>
       <footer className={clsx(
-        "bg-white dark:bg-gray-900",
-        "border-t-1 border-t-slate-200 dark:border-t-gray-800",
-        "border-b-1 border-b-slate-300 dark:border-b-gray-900",
+        "bg-content1",
+        "border-t-1 border-t-divider",
+        "border-b-1 border-b-content3",
+        'prose dark:prose-invert max-w-none prose-a:no-underline',
       )}>
         <div className={clsx(
-          "mx-auto w-full max-w-screen-xl",
+          "container mx-auto",
           "grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4"
         )}>
           {Object.entries(menuItems).map(([title, items], index) => (
             <div key={`${title}-${index}`}>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h4 className="uppercase leading-tight">
                 {title}
-              </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium opacity-65">
-                {items.map(([label, href], index) => (
-                  <li className="mb-4" key={`${label}-${index}`}>
-                    <Link
-                      className="w-full"
-                      underline="hover"
-                      href={href}
-                      color="foreground"
-                      size="sm"
-                      isExternal={href.startsWith("http")}
-                      showAnchorIcon={href.startsWith("http")}
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              </h4>
+              {items.map(([label, href], index) => (
+                <Link
+                  key={`${label}-${index}`}
+                  className="w-full"
+                  underline="hover"
+                  href={href}
+                  color="foreground"
+                  size="sm"
+                  isExternal={href.startsWith("http")}
+                  showAnchorIcon={href.startsWith("http")}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           ))}
         </div>
       </footer>
       <footer className={clsx(
         "bg-gradient-to-br",
-        "from-slate-50 to-slate-100",
-        "dark:from-gray-900 dark:to-gray-950",
-        "border-t-1 border-t-slate-200 dark:border-t-gray-800",
+        "from-content2 to-content1",
+        "border-t-1 border-t-content2",
       )}>
         <div className={clsx(
-          "mx-auto w-full max-w-screen-xl",
+          "container mx-auto",
           "px-4 py-6 md:flex md:items-center md:justify-between"
         )}>
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <small>
             © {now.getFullYear()} <Link href="/" color="foreground" size="sm" underline="hover">{t('footer.copyright')}</Link>. {t('footer.rightsReserved')}
-          </span>
-          <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-            <Dropdown>
-              <DropdownTrigger>
-                <Button
-                  startContent={<Language className="w-4 h-4 mr-2" />}
-                >
-                  {displayNames.of(locale)}
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu selectionMode="single" selectedKeys={new Set([locale])}>
-                {
-                  Array.from(locales)
-                    .sort((a, b) => {
-                      const aLocalized = localeInNative(a);
-                      const bLocalized = localeInNative(b);
-                      return aLocalized.localeCompare(bLocalized);
-                    })
-                    .map((locale) => (
-                      <DropdownItem
-                        key={locale}
-                        {...linkProps({
-                          href: pathName,
-                          hrefLang: locale,
-                        })}
-                      >
-                        {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small>
-                      </DropdownItem>
-                    ))
-                }
-              </DropdownMenu>
-            </Dropdown>
-          </div>
+          </small>
+          <Dropdown>
+            <DropdownTrigger>
+              <Button
+                startContent={<Language className="w-4 h-4 mr-2" />}
+              >
+                {displayNames.of(locale)}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu selectionMode="single" selectedKeys={new Set([locale])}>
+              {
+                Array.from(locales)
+                  .sort((a, b) => {
+                    const aLocalized = localeInNative(a);
+                    const bLocalized = localeInNative(b);
+                    return aLocalized.localeCompare(bLocalized);
+                  })
+                  .map((locale) => (
+                    <DropdownItem
+                      key={locale}
+                      {...linkProps({
+                        href: pathName,
+                        hrefLang: locale,
+                      })}
+                    >
+                      {localeInNative(locale)} <small><i>({displayNames.of(locale)})</i></small>
+                    </DropdownItem>
+                  ))
+              }
+            </DropdownMenu>
+          </Dropdown>
         </div>
       </footer >
     </>

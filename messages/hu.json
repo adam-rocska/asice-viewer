@@ -93,6 +93,11 @@
           "label": "Fájl törlése"
         }
       }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "név"
+      }
     }
   }
 }

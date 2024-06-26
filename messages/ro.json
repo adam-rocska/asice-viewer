@@ -87,7 +87,16 @@
       "loading": "Se încarcă fișiere din browser...",
       "noFilesToDisplay": "Nu există fișiere de afișat.",
       "controls": {
-        "openNewFile": "Deschideți un alt fișier ASiC-E"
+        "openNewFile": "Deschideți un alt fișier ASiC-E",
+        "deleteFile": {
+          "explanation": "Acesta va elimina definitiv acest fișier din browser.",
+          "label": "Sterge fisierul"
+        }
+      }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "Nume"
       }
     }
   }

@@ -100,7 +100,7 @@ export default (p => {
         {(item) => (
           <TableRow
             key={item.name}
-            {...linkProps({href: `/file/${item.name}`})}
+            {...linkProps({href: `/file?${t('features.fileViewer.queryStringParameter.name')}=${item.name}`})}
           >
             {(columnKey) => (
               <TableCell>

@@ -93,6 +93,11 @@
           "explanation": "It will permanently remove this file from your browser."
         }
       }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "name"
+      }
     }
   }
 }
