@@ -1,9 +1,9 @@
-import {Navbar} from "@nextui-org/react";
-import {FunctionComponent} from "react";
+"use client";
+import {BreadcrumbItem, Breadcrumbs, Navbar, NavbarContent} from "@nextui-org/react";
+import {FunctionComponent, ReactNode} from "react";
+import Link, {useLinkPropsFactory} from "./link";
 
 export type Props = {
-  title: string,
-  home: string,
   breadcrumb?: Array<[
     label: string,
     href: string,
@@ -12,12 +12,31 @@ export type Props = {
       href: string
     ]>
   ]>
+  children?: ReactNode
 };
 
-export default (p => {
+export default (({breadcrumb, children}) => {
+  const linkProps = useLinkPropsFactory();
   return (
-    <Navbar>
-
+    <Navbar classNames={{base: 'bg-content1/70'}} isBordered isBlurred>
+      {breadcrumb && (
+        <NavbarContent justify="start">
+          <Breadcrumbs>
+            {breadcrumb.map(([label, href, alternatives], index) => (
+              <BreadcrumbItem key={index}>
+                <Link href={href} color="foreground">
+                  {label}
+                </Link>
+              </BreadcrumbItem>
+            ))}
+          </Breadcrumbs>
+        </NavbarContent>
+      )}
+      {children && (
+        <NavbarContent justify="end">
+          {children}
+        </NavbarContent>
+      )}
     </Navbar>
   );
 }) satisfies FunctionComponent<Props>;

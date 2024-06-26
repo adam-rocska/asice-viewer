@@ -58,6 +58,17 @@
           "title": "Terms of Use"
         }
       }
+    },
+    "page": {
+      "files": {
+        "title": "Locally Stored Files",
+        "controls": {
+          "openNewFile": {
+            "label": "Open Another ASiC-E File",
+            "tooltip": "Or just drag and drop on this page anywhere."
+          }
+        }
+      }
     }
   },
   "actions": {
@@ -65,7 +76,6 @@
     "open": "Open menu",
     "starOnGithub": "Star on GitHub"
   },
-  "tooltip": { },
   "footer": {
     "rightsReserved": "All Rights Reserved.",
     "copyright": "Adam Laszlo Rocska's ASiC-E Viewer"
@@ -87,10 +97,9 @@
       "loading": "Loading files from your browser...",
       "noFilesToDisplay": "No files to display.",
       "controls": {
-        "openNewFile": "Open Another ASiC-E File",
         "deleteFile": {
           "label": "Delete File",
-          "explanation": "It will permanently remove this file from your browser."
+          "tooltip": "It will permanently remove this file from your browser."
         }
       }
     },

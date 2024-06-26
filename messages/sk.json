@@ -65,7 +65,6 @@
       }
     }
   },
-  "tooltip": {},
   "footer": {
     "rightsReserved": "Všetky práva vyhradené.",
     "copyright": "Prehliadač ASiC-E Adam Laszlo Rocska"
@@ -87,9 +86,8 @@
       "loading": "Načítavajú sa súbory z vášho prehliadača...",
       "noFilesToDisplay": "Žiadne súbory na zobrazenie.",
       "controls": {
-        "openNewFile": "Otvorte ďalší súbor ASiC-E",
         "deleteFile": {
-          "explanation": "Tento súbor sa natrvalo odstráni z vášho prehliadača.",
+          "tooltip": "Tento súbor sa natrvalo odstráni z vášho prehliadača.",
           "label": "Vymazať súbor"
         }
       }

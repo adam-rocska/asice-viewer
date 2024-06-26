@@ -3,11 +3,25 @@ import {PageProps} from '@/app/next-types';
 import TableView from "@/features/file-table";
 import {unstable_setRequestLocale} from 'next-intl/server';
 import clsx from 'clsx';
+import SecondaryNavbar from '@/components/secondary-navbar';
+import {useTranslations} from 'next-intl';
+import FileLoader from '@/features/file-loader';
+import PaperPlus from '@/icons/paper-plus.svg';
 
 export default (({params}) => {
   unstable_setRequestLocale(params.locale);
+  const t = useTranslations();
   return (
     <>
+      <SecondaryNavbar
+        breadcrumb={[
+          [t('navigation.page.files.title'), `/files`],
+        ]}
+      >
+        <FileLoader color="primary" endContent={<PaperPlus className='size-6' />}>
+          {t('navigation.page.files.controls.openNewFile.label')}
+        </FileLoader>
+      </SecondaryNavbar>
       <main className={clsx(
         'container mx-auto',
         'pt-8 pb-16 px-4',

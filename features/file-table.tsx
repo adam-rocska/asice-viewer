@@ -1,14 +1,11 @@
 "use client";
 import {FunctionComponent, useCallback, useMemo, useState} from 'react';
-import {Spacer, Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow, Selection, Dropdown, DropdownTrigger, Button, DropdownMenu, DropdownItem, Tooltip} from '@nextui-org/react';
+import {Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow, Selection, Button, Tooltip} from '@nextui-org/react';
 import useFileList from './use-file-list';
 import {useFormatter, useTranslations} from 'next-intl';
 import byteFormatter from '@/lib/byte-formatter';
 import {useIsClient} from 'usehooks-ts';
 import clsx from 'clsx';
-import FileLoader from './file-loader';
-import PaperPlus from "@/icons/paper-plus.svg";
-import MoreSquare from "@/icons/more-square.svg";
 import {useLinkPropsFactory} from '@/components/link';
 import fileStorage from "@/db/file-storage";
 import TrashCan from "@/icons/trash-can.svg";
@@ -32,7 +29,7 @@ export default (p => {
         case "size": return byteFormatter.format(file.size);
         case "actions": return (
           <Tooltip
-            content={t('features.fileTable.controls.deleteFile.explanation')}
+            content={t('features.fileTable.controls.deleteFile.tooltip')}
             color="danger"
             showArrow
           >
@@ -51,17 +48,14 @@ export default (p => {
         default: return null;
       }
     },
-    [formatter]
+    [formatter, t]
   );
 
   const controls = useMemo(() => {
     return (
       <div className="flex flex-col gap-4">
         <div className="flex justify-between gap-3 items-end">
-          <Spacer />
-          <FileLoader color="primary" endContent={<PaperPlus />}>
-            {t('features.fileTable.controls.openNewFile')}
-          </FileLoader>
+
         </div>
       </div>
     );

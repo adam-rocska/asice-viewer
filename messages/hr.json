@@ -65,7 +65,6 @@
       }
     }
   },
-  "tooltip": {},
   "footer": {
     "rightsReserved": "Sva prava pridržana.",
     "copyright": "ASiC-E preglednik Adama Laszla Rocske"
@@ -87,9 +86,8 @@
       "loading": "Učitavanje datoteka iz vašeg preglednika...",
       "noFilesToDisplay": "Nema datoteka za prikaz.",
       "controls": {
-        "openNewFile": "Otvorite drugu ASiC-E datoteku",
         "deleteFile": {
-          "explanation": "Trajno će ukloniti ovu datoteku iz vašeg preglednika.",
+          "tooltip": "Trajno će ukloniti ovu datoteku iz vašeg preglednika.",
           "label": "Izbrisati dateoteku"
         }
       }
