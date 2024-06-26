@@ -13,13 +13,13 @@ export default (p => {
   const body = useRef(global?.document?.body);
   const showDropzone = useBooleanState(false);
   useEventListener('dragenter', showDropzone.set, body);
-  const fileStorage = useFileStorage();
+  const {putFile} = useFileStorage();
   const t = useTranslations();
 
   const dropzoneProps: DropzoneOptions = {
     onDragEnter: showDropzone.set,
     onDrop: async acceptedFiles => {
-      await fileStorage.putFile(...acceptedFiles);
+      await putFile(...acceptedFiles);
       showDropzone.unset();
     },
     accept: {'application/vnd.etsi.asic-e+zip': ['.asice', '.sce', '.bdoc']}

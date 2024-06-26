@@ -1,60 +1,59 @@
 "use client";
 import {useMemo} from "react";
-import {useLocalStorage} from "usehooks-ts";
+import fileStorage from "@/db/file-storage";
+import {useLiveQuery} from 'dexie-react-hooks';
+
+// This crap is good enough. Desktops have the horsepower for it, and I'd be surprised if mobile users would have boatloads of files managed on their phone in a website.
 
 export default function useFileStorage(): FileCollectionHook;
 export default function useFileStorage(fileName: string): SingleFileHook;
 export default function useFileStorage(fileName?: string): SingleFileHook | FileCollectionHook {
-  const [archives, setArchives] = useLocalStorage<FileStorage>("archives", {});
-  const files = useMemo(() => Object
-    .fromEntries(
-      Object
-        .entries(archives)
-        .map(([name, archive]) => [
-          name,
-          new File([archive.text], archive.name, {lastModified: archive.lastModified, type: archive.type})
-        ])
-    ),
+  const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
+  const files = useMemo(() => archives
+    .map(archive => new File(
+      [archive.arrayBuffer],
+      archive.name,
+      {lastModified: archive.lastModified, type: archive.type}
+    )),
     [archives]
   );
   const file = useMemo(() => {
     if (fileName === undefined) return undefined;
-    return files[fileName];
+    return files.find(file => file.name === fileName);
   }, [files, fileName]);
 
   const putFile = async (file: File, ...otherFiles: File[]) => {
-    const files = [file, ...otherFiles];
-    const archives = await Promise
+    await Promise
       .all(
-        files.map(async file => ({
-          lastModified: file.lastModified,
-          name: file.name,
-          size: file.size,
-          type: file.type,
-          text: await file.text(),
-        }))
+        [file, ...otherFiles]
+          .map(async file => await fileStorage.archives.add({
+            lastModified: file.lastModified,
+            name: file.name,
+            size: file.size,
+            type: file.type,
+            arrayBuffer: await file.arrayBuffer(),
+          }))
       );
-    const newArchives = Object.fromEntries(archives.map(archive => [archive.name, archive]));
-    setArchives(archives => ({...archives, ...newArchives}));
   };
 
   const removeFile = async (file: File, ...otherFiles: File[]) => {
-    setArchives(archives => {
-      const newArchives = {...archives};
-      for (const otherFile of [file, ...otherFiles]) delete newArchives[otherFile.name];
-      return newArchives;
-    });
+    await Promise
+      .all(
+        archives
+          .map(archive => archive.name)
+          .filter(name => [file, ...otherFiles].map(file => file.name).includes(name))
+          .map(name => fileStorage.archives.delete(name))
+      );
   };
+  ;
 
   return arguments.length === 0
     ? {files, putFile, removeFile}
     : {file, putFile, removeFile};
 };
 
-export type FileStorage = {[name in string]: Archive;};
-
 export type FileCollectionHook = {
-  files: {[name in string]: File;},
+  files: File[],
   putFile: (...files: File[]) => Promise<void>,
   removeFile: (...files: File[]) => Promise<void>
 };
@@ -64,12 +63,4 @@ export type SingleFileHook = {
   file: File | undefined,
   putFile: (file: File) => Promise<void>,
   removeFile: (file: File) => Promise<void>
-};
-
-type Archive = {
-  lastModified: number;
-  name: string;
-  size: number;
-  type: string;
-  text: string;
 };

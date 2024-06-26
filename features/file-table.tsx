@@ -6,7 +6,7 @@ import {useFormatter, useTranslations} from 'next-intl';
 import byteFormatter from '@/lib/byte-formatter';
 import {useIsClient} from 'usehooks-ts';
 import clsx from 'clsx';
-import FileLoader from '../file-loader';
+import FileLoader from './file-loader';
 import PaperPlus from "@/icons/paper-plus.svg";
 
 type Props = {
@@ -18,7 +18,7 @@ export default (p => {
   const fileList = useFileList();
   const formatter = useFormatter();
   const t = useTranslations();
-  const [selectedKeys, setSelectedKeys] = useState(new Set([]));
+  const [selectedKeys, _] = useState(new Set([]));
   const renderCell = useCallback(
     (file: File, key: keyof File) => {
       switch (key) {

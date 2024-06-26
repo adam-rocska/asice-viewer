@@ -1,9 +1,9 @@
 "use client";
 import {FunctionComponent, useEffect, useState} from "react";
 import FileLoader from "@/features/file-loader";
-import useFileStorage from "@/features/use-file-storage";
 import {Button, Skeleton} from "@nextui-org/react";
 import Link from "@/components/link";
+import {useFileCount} from "@/features/use-file-count";
 
 export type Props = {
   uploadLabel: string,
@@ -15,11 +15,9 @@ export type Props = {
 export default (p => {
   const [hasFiles, setHasFiles] = useState<boolean>();
   const isClient = hasFiles !== undefined;
-  const fileStorage = useFileStorage();
+  const fileCount = useFileCount();
 
-  useEffect(() => setHasFiles(
-    Object.keys(fileStorage.files).length > 0
-  ), [fileStorage.files]);
+  useEffect(() => setHasFiles(fileCount > 0), [fileCount]);
 
   return (
     <div className="flex flex-col gap-2 align-middle justify-center">

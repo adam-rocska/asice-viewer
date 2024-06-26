@@ -1,12 +1,18 @@
-import useFileStorage from "@/features/use-file-storage";
+import {useLiveQuery} from "dexie-react-hooks";
 import {useAsyncList} from "react-stately";
+import fileStorage from "@/db/file-storage";
+import {useEffect} from "react";
 
 export default function useFileList() {
-  const fileStorage = useFileStorage();
+  const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
   const list = useAsyncList<File>({
-    load: async () => {
-      return {items: Object.values(fileStorage.files)};
-    },
+    load: async () => ({
+      items: await Promise.all(archives.map(async archive => new File(
+        [archive.arrayBuffer],
+        archive.name,
+        {lastModified: archive.lastModified, type: archive.type}
+      )))
+    }),
     sort: async ({items, sortDescriptor}) => ({
       items: items.sort((lhs, rhs) => {
         const column = sortDescriptor.column as keyof File;
@@ -20,6 +26,10 @@ export default function useFileList() {
       })
     })
   });
+
+  useEffect(() => {
+    list.reload();
+  }, [archives]);
 
   return list;
 }
