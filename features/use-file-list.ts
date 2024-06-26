@@ -6,6 +6,7 @@ import {useEffect} from "react";
 export default function useFileList() {
   const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
   const list = useAsyncList<File>({
+    getKey: file => file.name,
     load: async () => ({
       items: await Promise.all(archives.map(async archive => new File(
         [archive.arrayBuffer],

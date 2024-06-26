@@ -1,6 +1,6 @@
 "use client";
-import {FunctionComponent, useCallback, useMemo, useState} from 'react';
-import {Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow, Selection, Button, Tooltip} from '@nextui-org/react';
+import {FunctionComponent, useCallback, useMemo} from 'react';
+import {Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow, Button, Tooltip, Spacer} from '@nextui-org/react';
 import useFileList from './use-file-list';
 import {useFormatter, useTranslations} from 'next-intl';
 import byteFormatter from '@/lib/byte-formatter';
@@ -54,11 +54,43 @@ export default (p => {
     return (
       <div className="flex flex-col gap-4">
         <div className="flex justify-between gap-3 items-end">
-
+          <Spacer />
+          <Tooltip
+            content={t('features.fileTable.controls.deleteSelectedFile.tooltip', {
+              count: fileList.selectedKeys === 'all'
+                ? Number.POSITIVE_INFINITY
+                : fileList.selectedKeys.size,
+            })}
+            color="danger"
+            isDisabled
+          >
+            <Button
+              onPress={() => {
+                if (fileList.selectedKeys === 'all') {
+                  fileStorage.archives.clear();
+                } else {
+                  fileList.selectedKeys.forEach(key => {
+                    if (typeof key === 'number') return;
+                    fileStorage.archives.delete(key);
+                  });
+                }
+              }}
+              variant="light"
+              color="danger"
+              isDisabled={fileList.selectedKeys !== 'all' && fileList.selectedKeys.size === 0}
+              endContent={<TrashCan className='size-fit' />}
+            >
+              {t('features.fileTable.controls.deleteSelectedFile.label', {
+                count: fileList.selectedKeys === 'all'
+                  ? Number.POSITIVE_INFINITY
+                  : fileList.selectedKeys.size,
+              })}
+            </Button>
+          </Tooltip>
         </div>
       </div>
     );
-  }, []);
+  }, [fileList.selectedKeys, t]);
 
   return (
     <Table

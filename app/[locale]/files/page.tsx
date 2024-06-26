@@ -18,14 +18,13 @@ export default (({params}) => {
           [t('navigation.page.files.title'), `/files`],
         ]}
       >
-        <FileLoader color="primary" endContent={<PaperPlus className='size-6' />}>
+        <FileLoader color="primary" endContent={<PaperPlus className='size-fit' />}>
           {t('navigation.page.files.controls.openNewFile.label')}
         </FileLoader>
       </SecondaryNavbar>
       <main className={clsx(
         'container mx-auto',
-        'pt-8 pb-16 px-4',
-        'prose dark:prose-invert',
+        'pt-16 pb-32 px-4'
       )}>
         <TableView className="not-prose" />
       </main>

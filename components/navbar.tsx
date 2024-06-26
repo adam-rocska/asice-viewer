@@ -163,7 +163,7 @@ export default (() => {
             variant="flat"
           >
             {t("actions.starOnGithub")}
-            <GithubAnimated width={24} height={24} />
+            <GithubAnimated className="size-sm-fit" />
           </Button>
         </NavbarItem>
       </NavbarContent>
