@@ -20,7 +20,6 @@ export default (p => {
   const formatter = useFormatter();
   const t = useTranslations();
   const linkProps = useLinkPropsFactory();
-  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set());
   const renderCell = useCallback(
     (file: File, key: string) => {
       switch (key) {
@@ -59,19 +58,19 @@ export default (p => {
         </div>
       </div>
     );
-  }, [t]);
+  }, []);
 
   return (
     <Table
       aria-label={"Files loaded in this browser"}
       isHeaderSticky
 
-      selectedKeys={selectedKeys}
-      onSelectionChange={setSelectedKeys}
+      selectedKeys={fileList.selectedKeys}
+      onSelectionChange={fileList.setSelectedKeys}
       selectionMode="multiple"
 
       topContent={controls}
-      topContentPlacement="outside"
+      topContentPlacement="inside"
 
       sortDescriptor={fileList.sortDescriptor}
       onSortChange={fileList.sort}
