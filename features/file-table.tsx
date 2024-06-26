@@ -76,7 +76,6 @@ export default (p => {
       onSortChange={fileList.sort}
 
       className={clsx(p.className, "max-h-96")}
-      isStriped
     >
       <TableHeader>
         <TableColumn allowsSorting key="name"> {t('features.fileTable.columnLabel.fileName')}</TableColumn>
