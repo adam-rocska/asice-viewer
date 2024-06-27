@@ -103,7 +103,7 @@
         },
         "deleteSelectedFile": {
           "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} other {Delete Selected Files}}",
-          "tooltip": "{počet, množné číslo, =0 {Vyberte súbory, ktoré chcete odstrániť.} =1 {Natrvalo odstráni vybraný súbor.} iné {Natrvalo odstráni všetky vybraté súbory.}}"
+          "tooltip": "{počet, množné číslo, =0 {Vyberte súbory, ktoré chcete odstrániť.} =1 {Natrvalo odstráni vybraný súbor.} other {Natrvalo odstráni všetky vybraté súbory.}}"
         }
       }
     },

@@ -102,8 +102,8 @@
           "label": "Sterge fisierul"
         },
         "deleteSelectedFile": {
-          "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} alt {Delete Selected Files}}",
-          "tooltip": "{count, plural, =0 {Select the files to delete.} =1 {Se va șterge definitiv fișierul selectat.} altele {Se va șterge definitiv toate fișierele selectate.}}"
+          "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} other {Delete Selected Files}}",
+          "tooltip": "{count, plural, =0 {Select the files to delete.} =1 {Se va șterge definitiv fișierul selectat.} other {Se va șterge definitiv toate fișierele selectate.}}"
         }
       }
     },
