@@ -16,7 +16,7 @@ export default (() => {
   const fileName = searchParams.get(t('features.fileViewer.queryStringParameter.name'));
   if (!fileName) return redirect("/files");
 
-  const file = useFileStorage(fileName);
+  const {file} = useFileStorage(fileName);
   const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
 
   return (
@@ -39,7 +39,7 @@ export default (() => {
         'pt-8 pb-16 px-4',
         'prose dark:prose-invert',
       )}>
-
+        {file?.name}
       </main >
     </>
   );
