@@ -1,11 +1,11 @@
 "use client";
-import {BreadcrumbItem, Breadcrumbs, Navbar, NavbarContent} from "@nextui-org/react";
+import {BreadcrumbItem, Breadcrumbs, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Navbar, NavbarContent} from "@nextui-org/react";
 import {FunctionComponent, ReactNode} from "react";
 import Link, {useLinkPropsFactory} from "./link";
 
 export type Props = {
   breadcrumb?: Array<[
-    label: string,
+    label: ReactNode,
     href: string,
     alternatives?: Array<[
       label: string,
@@ -24,9 +24,30 @@ export default (({breadcrumb, children}) => {
           <Breadcrumbs>
             {breadcrumb.map(([label, href, alternatives], index) => (
               <BreadcrumbItem key={index}>
-                <Link href={href} color="foreground">
-                  {label}
-                </Link>
+                {
+                  alternatives && alternatives.length > 0
+                    ? (
+                      <Dropdown>
+                        <DropdownTrigger>
+                          <Link color="foreground">
+                            {label}
+                          </Link>
+                        </DropdownTrigger>
+                        <DropdownMenu selectionMode="single" selectedKeys={new Set([href])}>
+                          {alternatives.map(([label, href]) => (
+                            <DropdownItem key={href} {...linkProps({href})}>
+                              {label}
+                            </DropdownItem>
+                          ))}
+                        </DropdownMenu>
+                      </Dropdown>
+                    )
+                    : (
+                      <Link href={href} color="foreground">
+                        {label}
+                      </Link>
+                    )
+                }
               </BreadcrumbItem>
             ))}
           </Breadcrumbs>

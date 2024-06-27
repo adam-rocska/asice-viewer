@@ -89,7 +89,7 @@ export default (() => {
           <Dropdown>
             <DropdownTrigger>
               <Button
-                startContent={<Language className="w-4 h-4 mr-2" />}
+                startContent={<Language className="size-fit" />}
               >
                 {displayNames.of(locale)}
               </Button>
