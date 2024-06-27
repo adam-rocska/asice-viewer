@@ -23,7 +23,7 @@ export default (({params}) => {
         </FileLoader>
       </SecondaryNavbar>
       <main className={clsx(
-        'container mx-auto',
+        'content mx-auto',
         'pt-16 pb-32 px-4'
       )}>
         <TableView className="not-prose" />

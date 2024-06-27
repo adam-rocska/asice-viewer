@@ -6,9 +6,9 @@ import {useSearchParams} from 'next/navigation';
 import {redirect} from '@/lib/i18n/navigation';
 import {useTranslations} from 'next-intl';
 import fileStorage from "@/db/file-storage";
-import SecondaryNavbar from '@/components/secondary-navbar';
 import {useLiveQuery} from 'dexie-react-hooks';
 import useFileStorage from '@/features/use-file-storage';
+import {Skeleton} from '@nextui-org/react';
 
 export default (() => {
   const t = useTranslations();
@@ -21,25 +21,16 @@ export default (() => {
 
   return (
     <>
-      <SecondaryNavbar
-        breadcrumb={[
-          [
-            "File",
-            `/file?${t('features.fileViewer.queryStringParameter.name')}=${fileName}`,
-            archives.map(({name}) => [
-              name,
-              `/file?${t('features.fileViewer.queryStringParameter.name')}=${name}`
-            ])
-          ],
-        ]}
-      >
-      </SecondaryNavbar>
       <main className={clsx(
-        'container mx-auto',
+        'content mx-auto',
         'pt-8 pb-16 px-4',
-        'prose dark:prose-invert',
+        'prose dark:prose-invert max-w-none',
       )}>
-        {file?.name}
+        <Skeleton isLoaded={!!file}>
+          <h1>
+            {file?.name}
+          </h1>
+        </Skeleton>
       </main >
     </>
   );
