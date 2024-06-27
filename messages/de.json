@@ -63,6 +63,17 @@
         },
         "title": "Legal"
       }
+    },
+    "page": {
+      "files": {
+        "controls": {
+          "openNewFile": {
+            "label": "Öffnen Sie eine andere ASiC-E-Datei",
+            "tooltip": "Oder ziehen Sie es einfach per Drag & Drop an eine beliebige Stelle auf dieser Seite."
+          }
+        },
+        "title": "Lokal gespeicherte Dateien"
+      }
     }
   },
   "footer": {
@@ -89,7 +100,16 @@
         "deleteFile": {
           "tooltip": "Dadurch wird diese Datei dauerhaft aus Ihrem Browser entfernt.",
           "label": "Datei löschen"
+        },
+        "deleteSelectedFile": {
+          "label": "{count, plural, =0 {Löschen} =1 {Ausgewählte Datei löschen} other {Ausgewählte Dateien löschen}}",
+          "tooltip": "{count, plural, =0 {Wählen Sie die zu löschenden Dateien aus.} =1 {Die ausgewählte Datei wird dauerhaft gelöscht.} other {Alle ausgewählten Dateien werden dauerhaft gelöscht.}}"
         }
+      }
+    },
+    "fileViewer": {
+      "queryStringParameter": {
+        "name": "Name"
       }
     }
   }

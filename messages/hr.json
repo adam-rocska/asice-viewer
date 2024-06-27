@@ -63,6 +63,17 @@
         },
         "title": "Pravno"
       }
+    },
+    "page": {
+      "files": {
+        "controls": {
+          "openNewFile": {
+            "label": "Otvorite drugu ASiC-E datoteku",
+            "tooltip": "Ili samo povucite i ispustite na ovu stranicu bilo gdje."
+          }
+        },
+        "title": "Lokalno pohranjene datoteke"
+      }
     }
   },
   "footer": {
@@ -89,6 +100,10 @@
         "deleteFile": {
           "tooltip": "Trajno će ukloniti ovu datoteku iz vašeg preglednika.",
           "label": "Izbrisati dateoteku"
+        },
+        "deleteSelectedFile": {
+          "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} other {Delete Selected Files}}",
+          "tooltip": "{count, plural, =0 {Odaberite datoteke za brisanje.} =1 {Trajno će izbrisati odabranu datoteku.} other {Trajno će izbrisati sve odabrane datoteke.}}"
         }
       }
     },

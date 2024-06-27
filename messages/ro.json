@@ -63,6 +63,17 @@
         },
         "title": "Legal"
       }
+    },
+    "page": {
+      "files": {
+        "controls": {
+          "openNewFile": {
+            "label": "Deschideți un alt fișier ASiC-E",
+            "tooltip": "Sau pur și simplu trageți și plasați pe această pagină oriunde."
+          }
+        },
+        "title": "Fișiere stocate local"
+      }
     }
   },
   "footer": {
@@ -89,6 +100,10 @@
         "deleteFile": {
           "tooltip": "Acesta va elimina definitiv acest fișier din browser.",
           "label": "Sterge fisierul"
+        },
+        "deleteSelectedFile": {
+          "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} alt {Delete Selected Files}}",
+          "tooltip": "{count, plural, =0 {Select the files to delete.} =1 {Se va șterge definitiv fișierul selectat.} altele {Se va șterge definitiv toate fișierele selectate.}}"
         }
       }
     },

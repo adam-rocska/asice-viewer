@@ -63,6 +63,17 @@
         },
         "title": "Právne"
       }
+    },
+    "page": {
+      "files": {
+        "controls": {
+          "openNewFile": {
+            "label": "Otvorte ďalší súbor ASiC-E",
+            "tooltip": "Alebo jednoducho presuňte myšou na túto stránku kdekoľvek."
+          }
+        },
+        "title": "Lokálne uložené súbory"
+      }
     }
   },
   "footer": {
@@ -89,6 +100,10 @@
         "deleteFile": {
           "tooltip": "Tento súbor sa natrvalo odstráni z vášho prehliadača.",
           "label": "Vymazať súbor"
+        },
+        "deleteSelectedFile": {
+          "label": "{count, plural, =0 {Delete} =1 {Delete Selected File} other {Delete Selected Files}}",
+          "tooltip": "{počet, množné číslo, =0 {Vyberte súbory, ktoré chcete odstrániť.} =1 {Natrvalo odstráni vybraný súbor.} iné {Natrvalo odstráni všetky vybraté súbory.}}"
         }
       }
     },

@@ -63,6 +63,17 @@
         },
         "title": "Jogi"
       }
+    },
+    "page": {
+      "files": {
+        "controls": {
+          "openNewFile": {
+            "label": "Nyisson meg egy másik ASiC-E fájlt",
+            "tooltip": "Vagy egyszerűen húzza át az oldalt bárhová."
+          }
+        },
+        "title": "Helyben tárolt fájlok"
+      }
     }
   },
   "footer": {
@@ -89,6 +100,10 @@
         "deleteFile": {
           "tooltip": "Ez véglegesen eltávolítja ezt a fájlt a böngészőből.",
           "label": "Fájl törlése"
+        },
+        "deleteSelectedFile": {
+          "label": "{count, plural, =0 {Törlés} =1 {Kijelölt fájl törlése} egyéb {Kijelölt fájlok törlése}}",
+          "tooltip": "{count, plural, =0 {Válassza ki a törölni kívánt fájlokat.} =1 {Véglegesen törli a kiválasztott fájlt.} other {Véglegesen törli az összes kiválasztott fájlt.}}"
         }
       }
     },
