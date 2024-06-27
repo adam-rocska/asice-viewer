@@ -5,8 +5,6 @@ import clsx from 'clsx';
 import {useSearchParams} from 'next/navigation';
 import {redirect} from '@/lib/i18n/navigation';
 import {useTranslations} from 'next-intl';
-import fileStorage from "@/db/file-storage";
-import {useLiveQuery} from 'dexie-react-hooks';
 import useFileStorage from '@/features/use-file-storage';
 import {Skeleton} from '@nextui-org/react';
 
@@ -17,7 +15,6 @@ export default (() => {
   if (!fileName) return redirect("/files");
 
   const {file} = useFileStorage(fileName);
-  const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
 
   return (
     <>
