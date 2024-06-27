@@ -16,7 +16,7 @@ export function useLinkPropsFactory(defaultLocale?: KnownLocale) {
 
   return function linkPropsFactory<P extends LinkProps>(props: P): P {
     if (!props.href) return props;
-    if (/.+?::/.test(props.href)) return props;
+    if (/.+?:\/\//.test(props.href)) return props;
 
     const pathComponents = props.href.split('/').filter(Boolean);
     const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';

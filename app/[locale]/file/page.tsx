@@ -1,7 +1,6 @@
 "use client";
-import {FunctionComponent, Suspense} from 'react';
+import {FunctionComponent} from 'react';
 import {PageProps} from '@/app/next-types';
-import TableView from "@/features/file-table";
 import clsx from 'clsx';
 import {useSearchParams} from 'next/navigation';
 import {redirect} from '@/lib/i18n/navigation';
@@ -40,12 +39,7 @@ export default (() => {
         'pt-8 pb-16 px-4',
         'prose dark:prose-invert',
       )}>
-        <Suspense fallback={"Loading"}>
-          <h1>
-            Files
-          </h1>
-          <TableView className="not-prose" />
-        </Suspense>
+
       </main >
     </>
   );
