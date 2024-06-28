@@ -2,9 +2,8 @@ import {LinkProps, Link as NextLink} from "@nextui-org/react";
 import {forwardRef} from "react";
 import {useLocale} from "next-intl";
 import {KnownLocale, isKnownLocale} from "@/lib/i18n/locales";
-import {getPathname} from "@/lib/i18n/navigation";
 import {Except} from "type-fest";
-import pathnames, {Pathname} from "@/lib/i18n/pathnames";
+import pathnames, {Pathname} from "@/app/pathnames";
 
 export default forwardRef<HTMLAnchorElement, KnownLinkProps>(function Link(p, ref) {
   const props = useLinkPropsFactory();
@@ -12,7 +11,6 @@ export default forwardRef<HTMLAnchorElement, KnownLinkProps>(function Link(p, re
     <NextLink {...props(p)} ref={ref} />
   );
 });
-
 
 export function useLinkPropsFactory(defaultLocale?: KnownLocale) {
   // MARK: yea, it's a force cast, but gotta live with it...
@@ -31,17 +29,11 @@ export function useLinkPropsFactory(defaultLocale?: KnownLocale) {
     if (pathComponents[0] === basePath) pathComponents.shift();
     if (isKnownLocale(pathComponents[0])) pathComponents.shift();
 
-    const pathname = getPathname({
-      locale,
-      /// TODO: This is very fucking dangerous.
-      href: '/' + pathComponents.join('/') as Pathname
-    })
-      .replace(/^\/+/, "")
-      .replace(/\/$/, "");
-
-    const href = ['', basePath, locale, pathname].join('/');
-
-    return {...props, href, hrefLang: locale};
+    return {
+      ...props,
+      href: ['', basePath, locale, ...pathComponents].join('/'),
+      hrefLang: locale
+    };
   };
 }
 

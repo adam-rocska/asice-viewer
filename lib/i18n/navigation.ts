@@ -1,8 +1,16 @@
-import {createLocalizedPathnamesNavigation} from 'next-intl/navigation';
+import {createSharedPathnamesNavigation} from 'next-intl/navigation';
 import locales from '@/lib/i18n/locales';
-import pathnames from './pathnames';
+import {InternalHref, isInternalHref} from '@/components/link';
 
-export const {redirect, usePathname, useRouter, permanentRedirect, getPathname} = createLocalizedPathnamesNavigation({
-  locales,
-  pathnames
-});
+const sharedPathnamesNavigation = createSharedPathnamesNavigation({locales});
+
+export const redirect = sharedPathnamesNavigation.redirect;
+export const useRouter = sharedPathnamesNavigation.useRouter;
+export const permanentRedirect = sharedPathnamesNavigation.permanentRedirect;
+
+export const usePathname = (): InternalHref => {
+  const result = sharedPathnamesNavigation.usePathname();
+  if (isInternalHref(result)) return result;
+  console.warn(`usePathname: unexpected result: ${result}`);
+  return result as InternalHref;
+};
