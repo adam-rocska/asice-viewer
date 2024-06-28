@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 
 export default (p => {
   return (
-    <svg width="98" height="96" {...p} viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+    <svg {...p} viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
       <motion.path
         fillRule="evenodd"
         clipRule="evenodd"

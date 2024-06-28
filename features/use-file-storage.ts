@@ -64,3 +64,4 @@ export type SingleFileHook = {
   putFile: (file: File) => Promise<void>,
   removeFile: (file: File) => Promise<void>
 };
+

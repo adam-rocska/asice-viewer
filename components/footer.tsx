@@ -6,7 +6,7 @@ import {FunctionComponent} from "react";
 import Language from "@/icons/language.svg";
 import {usePathname} from "@/lib/i18n/navigation";
 import clsx from "clsx";
-import Link, {useLinkPropsFactory} from "@/components/link";
+import Link, {Href, useLinkPropsFactory} from "@/components/link";
 
 export default (() => {
   const t = useTranslations();
@@ -61,11 +61,9 @@ export default (() => {
                   key={`${label}-${index}`}
                   className="w-full"
                   underline="hover"
-                  href={href}
+                  {...linkProps({href})}
                   color="foreground"
                   size="sm"
-                  isExternal={href.startsWith("http")}
-                  showAnchorIcon={href.startsWith("http")}
                 >
                   {label}
                 </Link>
@@ -89,7 +87,7 @@ export default (() => {
           <Dropdown>
             <DropdownTrigger>
               <Button
-                startContent={<Language className="size-fit" />}
+                startContent={<Language className="size-4" />}
               >
                 {displayNames.of(locale)}
               </Button>
@@ -123,7 +121,7 @@ export default (() => {
 }) satisfies FunctionComponent;
 
 
-type MenuItems = {[label in string]: Array<[label: string, href: string]>};
+type MenuItems = {[label in string]: Array<[label: string, href: Href]>};
 
 const localeInNative = (
   locale: KnownLocale

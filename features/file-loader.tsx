@@ -48,7 +48,7 @@ export default (p => {
                   "flex flex-col items-center justify-center pt-5 pb-6"
                 )
               })}>
-                <PaperPlus width={64} height={64} />
+                <PaperPlus className="size-6" />
                 <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 font-semibold">
                   {t('features.clientDatabase.fileLoader.dropzoneLabel')}
                 </p>

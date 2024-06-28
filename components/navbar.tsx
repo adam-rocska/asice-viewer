@@ -12,7 +12,7 @@ import Wand from "@/icons/wand.svg";
 import Folder from "@/icons/folder.svg";
 import ChevronDown from "@/icons/chevron-down.svg";
 import GithubAnimated from "@/icons/github-animated";
-import Link, {useLinkPropsFactory} from "@/components/link";
+import Link, {Href, useLinkPropsFactory} from "@/components/link";
 
 export default (() => {
   const t = useTranslations();
@@ -108,7 +108,7 @@ export default (() => {
                 <Button
                   disableRipple
                   className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                  endContent={<ChevronDown width={16} height={16} />}
+                  endContent={<ChevronDown className="size-4" />}
                   radius="sm"
                   variant="light"
                 >
@@ -129,7 +129,7 @@ export default (() => {
                   target={subItem.href.startsWith("http") ? "_blank" : undefined}
                   key={`${item}-${index}-${subIndex}-${subIndex}`}
                   description={subItem.description}
-                  startContent={<subItem.icon width={32} height={32} />}
+                  startContent={<subItem.icon className="size-4" />}
                 >
                   {subItem.title}
                 </DropdownItem>
@@ -162,8 +162,8 @@ export default (() => {
             color="secondary"
             variant="flat"
           >
+            <GithubAnimated className="size-6" />
             {t("actions.starOnGithub")}
-            <GithubAnimated className="size-sm-fit" />
           </Button>
         </NavbarItem>
       </NavbarContent>
@@ -176,7 +176,7 @@ type MenuItem = {
   items: Array<{
     title: string;
     description: string;
-    href: string;
+    href: Href;
     icon: FunctionComponent<SVGProps<SVGElement>>;
   }>
 }

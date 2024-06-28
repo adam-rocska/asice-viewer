@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import SecondaryNavbar from '@/components/secondary-navbar';
 import {useTranslations} from 'next-intl';
 import FileLoader from '@/features/file-loader';
-import PaperPlus from '@/icons/paper-plus.svg';
 
 export default (({params}) => {
   unstable_setRequestLocale(params.locale);
@@ -18,7 +17,7 @@ export default (({params}) => {
           [t('navigation.page.files.title'), `/files`],
         ]}
       >
-        <FileLoader color="primary" endContent={<PaperPlus className='size-fit' />}>
+        <FileLoader color="primary">
           {t('navigation.page.files.controls.openNewFile.label')}
         </FileLoader>
       </SecondaryNavbar>

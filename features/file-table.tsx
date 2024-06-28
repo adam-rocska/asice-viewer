@@ -40,7 +40,7 @@ export default (p => {
               onPress={() => fileStorage.archives.delete(file.name)}
               aria-label={t('features.fileTable.controls.deleteFile.label')}
             >
-              <TrashCan className='w-fit h-fit' />
+              <TrashCan className='size-6' />
             </Button>
           </Tooltip>
         );
@@ -78,7 +78,7 @@ export default (p => {
               variant="light"
               color="danger"
               isDisabled={fileList.selectedKeys !== 'all' && fileList.selectedKeys.size === 0}
-              endContent={<TrashCan className='size-fit' />}
+              endContent={<TrashCan className='size-6' />}
             >
               {t('features.fileTable.controls.deleteSelectedFile.label', {
                 count: fileList.selectedKeys === 'all'

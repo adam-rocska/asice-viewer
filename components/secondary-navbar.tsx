@@ -1,15 +1,15 @@
 "use client";
 import {BreadcrumbItem, Breadcrumbs, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Navbar, NavbarContent} from "@nextui-org/react";
 import {FunctionComponent, ReactNode} from "react";
-import Link, {useLinkPropsFactory} from "./link";
+import Link, {Href, useLinkPropsFactory} from "./link";
 
 export type Props = {
   breadcrumb?: Array<[
     label: ReactNode,
-    href: string,
+    href: Href,
     alternatives?: Array<[
       label: string,
-      href: string
+      href: Href
     ]>
   ]>
   children?: ReactNode
