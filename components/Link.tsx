@@ -71,6 +71,11 @@ export function isInternalHref(candidate: string): candidate is InternalHref {
   if (paths.includes(candidate)) return true;
   if (hashPaths.some(path => candidate.startsWith(path))) return true;
   if (queryPaths.some(path => candidate.startsWith(path))) return true;
+
+  const localePrefix = new RegExp(`^\/(${paths.join('|')}\/)`);
+  const isLocalized = localePrefix.test(candidate);
+  if (isLocalized) return isInternalHref(candidate.replace(localePrefix, '/'));
+
   return false;
 }
 
