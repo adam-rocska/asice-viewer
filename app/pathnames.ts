@@ -4,7 +4,6 @@ const pathnames = [
   '/robots.txt',
   '/sitemap.xml',
   '/files',
-  '/file',
   '/about/the-creator',
   '/about/the-format',
   '/about/the-tool',
