@@ -1,4 +1,4 @@
-import {FunctionComponent, lazy, Suspense} from 'react';
+import {FunctionComponent, Suspense} from 'react';
 import {PageProps} from '@/app/next-types';
 import {Card, CardBody, CardHeader, Skeleton} from '@nextui-org/react';
 import StorageStatus from './storage-status';

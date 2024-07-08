@@ -3,7 +3,7 @@ import {FunctionComponent} from 'react';
 import {PageProps} from '@/app/next-types';
 import FileTable from "@/features/file-table";
 
-export default (p => {
+export default (() => {
 
   return (
     <>

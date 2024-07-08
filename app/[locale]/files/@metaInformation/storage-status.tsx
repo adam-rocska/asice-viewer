@@ -1,7 +1,7 @@
 "use client";
 import * as byteFormatter from '@/lib/byte-formatter';
 import {FunctionComponent, ReactNode, use} from 'react';
-import {PieChart, Pie, Cell, ResponsiveContainer, PieLabel, Legend} from 'recharts';
+import {PieChart, Pie, Cell, ResponsiveContainer, Legend} from 'recharts';
 
 export default (() => {
   if (typeof window === 'undefined') return null;
