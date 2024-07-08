@@ -65,7 +65,7 @@ export function isInternalHref(candidate: string): candidate is InternalHref {
   if (isExternalHref(candidate)) return false;
   if (candidate.startsWith('#')) return true;
   if (candidate.startsWith('?')) return true;
-  const paths = Object.keys(pathnames);
+  const paths: readonly string[] = pathnames;
   const hashPaths = paths.map(path => `${path}#`);
   const queryPaths = paths.map(path => `${path}?`);
   if (paths.includes(candidate)) return true;

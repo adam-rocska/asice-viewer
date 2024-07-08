@@ -18,7 +18,11 @@ export type Props = {
 export default (({breadcrumb, children}) => {
   const linkProps = useLinkPropsFactory();
   return (
-    <Navbar classNames={{base: 'bg-content1/70'}} isBordered isBlurred>
+    <Navbar
+      classNames={{base: 'bg-content1/70'}}
+      isBordered
+      isBlurred
+    >
       {breadcrumb && (
         <NavbarContent justify="start">
           <Breadcrumbs>

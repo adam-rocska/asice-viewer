@@ -1,33 +1,14 @@
 "use client";
 import {FunctionComponent} from 'react';
 import {PageProps} from '@/app/next-types';
-import clsx from 'clsx';
-// import {useSearchParams} from 'next/navigation';
-// import {redirect} from '@/lib/i18n/navigation';
-// import {useTranslations} from 'next-intl';
-// import useFileStorage from '@/features/use-file-storage';
-// import {Skeleton} from '@nextui-org/react';
+import FileTable from "@/features/file-table";
 
-export default (() => {
-  // const t = useTranslations();
-  // const searchParams = useSearchParams();
-  // const fileName = searchParams.get(t('features.fileViewer.queryStringParameter.name'));
-  // if (!fileName) return redirect("/files");
-  // const {file} = useFileStorage(fileName);
+export default (p => {
 
   return (
     <>
-      <main className={clsx(
-        'content mx-auto',
-        'pt-8 pb-16 px-4',
-        'prose dark:prose-invert max-w-none',
-      )}>
-        tmp
-        {/* <Skeleton isLoaded={!!file}>
-          <h1>
-            {file?.name}
-          </h1>
-        </Skeleton> */}
+      <main>
+        <FileTable className="not-prose" />
       </main >
     </>
   );
