@@ -1,6 +1,6 @@
 "use client";
 import {useMemo} from "react";
-import fileStorage from "@/db/file-storage";
+import fileStorage from "@/db/asice-storage";
 import {useLiveQuery} from 'dexie-react-hooks';
 
 // This crap is good enough. Desktops have the horsepower for it, and I'd be surprised if mobile users would have boatloads of files managed on their phone in a website.

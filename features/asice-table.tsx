@@ -1,13 +1,13 @@
 "use client";
 import {FunctionComponent, useCallback, useMemo} from 'react';
 import {Spinner, Table, TableBody, TableCell, TableColumn, TableHeader, TableProps, TableRow, Button, Tooltip, Spacer} from '@nextui-org/react';
-import useFileList from './use-file-list';
+import useFileList from './use-asice-list';
 import {useFormatter, useTranslations} from 'next-intl';
 import * as byteFormatter from '@/lib/byte-formatter';
 import {useIsClient} from 'usehooks-ts';
 import clsx from 'clsx';
 import {useLinkPropsFactory} from '@/components/link';
-import fileStorage from "@/db/file-storage";
+import fileStorage from "@/db/asice-storage";
 import TrashCan from "@/icons/trash-can.svg";
 
 type Props = {

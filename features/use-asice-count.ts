@@ -1,5 +1,5 @@
 "use client";
-import fileStorage from "@/db/file-storage";
+import fileStorage from "@/db/asice-storage";
 import {useLiveQuery} from "dexie-react-hooks";
 
 export function useFileCount(): number {

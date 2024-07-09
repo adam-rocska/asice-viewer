@@ -1,9 +1,9 @@
 "use client";
 import {FunctionComponent, useEffect, useState} from "react";
-import FileLoader from "@/features/file-loader";
+import FileLoader from "@/features/asice-loader";
 import {Button, Skeleton} from "@nextui-org/react";
 import Link from "@/components/link";
-import {useFileCount} from "@/features/use-file-count";
+import {useFileCount} from "@/features/use-asice-count";
 
 export type Props = {
   uploadLabel: string,

@@ -1,6 +1,6 @@
 import {useLiveQuery} from "dexie-react-hooks";
 import {useAsyncList} from "react-stately";
-import fileStorage from "@/db/file-storage";
+import fileStorage from "@/db/asice-storage";
 import {useEffect} from "react";
 
 export default function useFileList() {

@@ -7,7 +7,7 @@ import PaperPlus from "@/icons/paper-plus.svg";
 import {useTranslations} from "next-intl";
 import {useEventListener} from "usehooks-ts";
 import useBooleanState from "@/lib/use-boolean-state";
-import useFileStorage from "./use-file-storage";
+import useFileStorage from "./use-asice-storage";
 
 export default (p => {
   const body = useRef(global?.document?.body);

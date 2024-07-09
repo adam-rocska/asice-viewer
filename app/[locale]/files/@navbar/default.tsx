@@ -1,7 +1,7 @@
 import {FunctionComponent} from 'react';
 import {PageProps} from '@/app/next-types';
 import {unstable_setRequestLocale} from 'next-intl/server';
-import FileLoader from "@/features/file-loader";
+import FileLoader from "@/features/asice-loader";
 import {useTranslations} from 'next-intl';
 import {Navbar, NavbarContent} from '@nextui-org/react';
 import Link from '@/components/link';
