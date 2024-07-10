@@ -14,6 +14,7 @@ export type Props = {
 
 export default (({archive, entry, name, classNames}) => {
   const Icon: FC<SVGProps<SVGElement>> = archive.is_folder(name) ? Folder : Paper;
+
   return (
     <Card
       shadow="none"
