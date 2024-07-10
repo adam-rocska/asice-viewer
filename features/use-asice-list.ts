@@ -1,10 +1,10 @@
 import {useLiveQuery} from "dexie-react-hooks";
 import {useAsyncList} from "react-stately";
-import fileStorage from "@/db/asice-storage";
+import asiceStorage from "@/db/asice-storage";
 import {useEffect} from "react";
 
 export default function useFileList() {
-  const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
+  const archives = useLiveQuery(() => asiceStorage.archives.toArray(), [], []);
   const list = useAsyncList<File>({
     getKey: file => file.name,
     load: async () => ({

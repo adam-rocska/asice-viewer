@@ -1,26 +1,29 @@
 import {unstable_setRequestLocale} from 'next-intl/server';
-import {FunctionComponent} from 'react';
+import {FunctionComponent, ReactNode} from 'react';
 import {LayoutProps} from '@/app/next-types';
 import locales from '@/lib/i18n/locales';
 import "./global.tw.css";
 import Providers from './providers';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
 
-export default (async ({children, params}) => {
-  unstable_setRequestLocale(params.locale);
+export default (async (p) => {
+  unstable_setRequestLocale(p.params.locale);
 
   return (
-    <html lang={params.locale}>
+    <html lang={p.params.locale}>
       <body className="">
-        <Providers locale={params.locale}>
-          <Navbar />
-          {children}
-          <Footer />
+        <Providers locale={p.params.locale}>
+          {p.navbar}
+          {p.children}
+          {p.footer}
         </Providers>
       </body>
     </html>
   );
-}) satisfies FunctionComponent<LayoutProps>;
+}) satisfies FunctionComponent<Props>;
 
 export const generateStaticParams = () => locales.map((locale) => ({locale}));
+
+type Props = LayoutProps & {
+  navbar: ReactNode,
+  footer: ReactNode
+};

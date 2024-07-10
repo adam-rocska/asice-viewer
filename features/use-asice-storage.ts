@@ -6,8 +6,8 @@ import {useLiveQuery} from 'dexie-react-hooks';
 // This crap is good enough. Desktops have the horsepower for it, and I'd be surprised if mobile users would have boatloads of files managed on their phone in a website.
 
 export default function useFileStorage(): FileCollectionHook;
-export default function useFileStorage(fileName: string): SingleFileHook;
-export default function useFileStorage(fileName?: string): SingleFileHook | FileCollectionHook {
+export default function useFileStorage(fileName: string | null | undefined): SingleFileHook;
+export default function useFileStorage(fileName?: string | null): SingleFileHook | FileCollectionHook {
   const archives = useLiveQuery(() => fileStorage.archives.toArray(), [], []);
   const files = useMemo(() => archives
     .map(archive => new File(
@@ -18,7 +18,7 @@ export default function useFileStorage(fileName?: string): SingleFileHook | File
     [archives]
   );
   const file = useMemo(() => {
-    if (fileName === undefined) return undefined;
+    if (fileName === undefined || fileName === null) return undefined;
     return files.find(file => file.name === fileName);
   }, [files, fileName]);
 
